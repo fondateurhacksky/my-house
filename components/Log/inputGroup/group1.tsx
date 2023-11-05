@@ -29,7 +29,8 @@ export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNex
               setIsValid(false);
             }
 
-          }, [errors]);
+          },[errors.nom, errors.prenom, errors.tel, focusedInputs.nom, focusedInputs.prenom, focusedInputs.tel]);
+          
           const handlerClick = () => {
             if (!(errors.nom || errors.prenom || errors.tel) && touched.nom && touched.prenom && touched.tel) {
               setIsNext1(!isNext1)

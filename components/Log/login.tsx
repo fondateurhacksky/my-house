@@ -1,6 +1,6 @@
 'use client';
 import { Formik, Form} from "formik";
-import { userSchema } from "../../utility/utility";
+import { userSchema, initialValuesSign } from "../../utility/utility";
 import  InputGroup1  from "./inputGroup/group1";
 import  InputGroup2  from "./inputGroup/group2";
 import  InputGroup3  from "./inputGroup/group3";
@@ -16,17 +16,9 @@ export default function SignupForm(){
 
   return (
           <Formik
-          initialValues={
-            {
-              nom:'',
-              prenom:'',
-              tel:'',
-              confirm:'',
-              pwd:'',
-              confirmPwd:'',
-            }
-          }
+          initialValues={initialValuesSign}
           validationSchema={userSchema}
+          
           onSubmit={(values, actions) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));

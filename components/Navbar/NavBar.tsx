@@ -16,7 +16,7 @@ export default function NavBar() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("click", handleClickWindow);
     };
-  }, []);
+  });
 
   const handleScroll = () => {
 

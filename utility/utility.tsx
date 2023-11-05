@@ -9,7 +9,14 @@ export const initialValues = {
   localite: '',
   possibiliteDormir: false,
 };
-
+export const initialValuesSign ={
+  nom:'',
+  prenom:'',
+  tel:'',
+  confirm:'',
+  pwd:'',
+  confirmPwd:'',
+}
 export const blogSchema = object().shape({
   nom: string().required('Le nom est requis'),
   prenom: string().required('Le prénom est requis'),
@@ -44,14 +51,14 @@ export interface PhoneInputFieldProps {
   handleFocus: (fieldName: string) => void;
 }
 
-// export interface FormValues   {
-//     nom: string;
-//     prenom: string;
-//     tel: string;
-//     confirm: string;
-//     pwd: string;
-//     confirmPwd: string;
-// }
+export interface FormValues   {
+    nom: string;
+    prenom: string;
+    tel: string;
+    confirm: string;
+    pwd: string;
+    confirmPwd: string;
+}
 
 export const ads = [
   {
