@@ -7,10 +7,11 @@ export const metadata: Metadata = {
   title: 'Annonces',
 }
 const Annonces = () => {
+
+
   return (
     <div className="flex justify-start justify-center h-full w-full pt-16">
-      <FilterBar/>
-      <div className='flex flex-wrap relative'>
+      <div className='flex justify-center flex-wrap relative '>
 
       {ads.map((ad, index) => (
         <Ad key={index} {...ad} />

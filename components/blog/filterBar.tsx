@@ -3,18 +3,30 @@ import { useState } from "react";
 import Select from 'react-select';
 import { ageOptions, genderOptions, religionOptions} from '../../utility/utility';
 import { VscPersonAdd } from 'react-icons/vsc';
+import Filter from "../Navbar/filter";
+import { clsx }  from 'clsx'
+import { usePathname } from 'next/navigation'
+import { useContext } from "react";
+import { FilterContext } from '../../app/lib/context'
 
 
 
 
 export default function FilterBar(){
+  
+  const [age, setAge] = useState('all');
+  const [gender, setGender] = useState('all');
+  const [salary, setsalary] = useState('all');
+  const [searchBar, setSearchBar] = useState(false);
+  const pathname = usePathname();
+  const filter = useContext(FilterContext);
 
-      const [age, setAge] = useState('all');
-      const [gender, setGender] = useState('all');
-      const [salary, setsalary] = useState('all');
 
     return(
-        <div className="shadow-lg hidden sm:flex shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 items-center justify-start flex-col h-[610px] sticky left-0 top-0 w-auto p-10">     
+        <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center h-auto w-full top-20 `,filter,
+        pathname === '/blog/annonces' && '',
+     !(pathname === '/blog/annonces') && 'hidden'
+        )}> 
         <div>
              <Select 
               options={ageOptions}
@@ -120,35 +132,4 @@ export default function FilterBar(){
         </div>
     )
 }
-
-// import Style from '../../styles/formh.module.css';
-// import axios from 'axios';
-// import Select from 'react-select';
-// import { useCart } from "react-use-cart";
-// export default function Formh({ updateData, setShow }) {
-//   const {
-//     totalUniqueItems
-//   } = useCart();
-//   useEffect(() => {
-//     axios.get('/api/persons/data',{ params: {age: age, gender: gender, salary: salary} })
-//         .then(res => updateData(res.data))
-//         .catch(err => console.log(err));
-// }, [age, gender, salary]);
-//   return (
-//         <div className={Style.navbar}>
-//          
-//           <div className={Style.nav_box}>
-//             <span className={Style.my_choix} onClick={() => setShow(false)}>Mes Choix</span> <span className={Style.line}>&#124;</span>
-//             <div className={Style.cart}>
-//               <span onClick={() => setShow(true)}>
-//               <VscPersonAdd />
-//               </span>
-//               <span className='my_choix'>{totalUniqueItems}</span>
-//             </div>
-//           </div>
-
-//           </div>
-//           )
-// }
-
 

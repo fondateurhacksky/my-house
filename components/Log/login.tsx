@@ -1,17 +1,19 @@
-'use client';
+'use client'
 import { Formik, Form} from "formik";
 import { userSchema, initialValuesSign } from "../../utility/utility";
 import  InputGroup1  from "./inputGroup/group1";
 import  InputGroup2  from "./inputGroup/group2";
 import  InputGroup3  from "./inputGroup/group3";
 import { useState } from "react";
-
+import { createTodo } from "../../app/lib/data";
+import { useTransition } from "react";
 export default function SignupForm(){
 
   const [isNext1, setIsNext1] = useState(true);
   const [isNext2, setIsNext2] = useState(false);
   const [isNext3, setIsNext3] = useState(false);
 
+ const [isPending, startTransition] = useTransition()
 
 
   return (
@@ -19,16 +21,27 @@ export default function SignupForm(){
           initialValues={initialValuesSign}
           validationSchema={userSchema}
           
-          onSubmit={(values, actions) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }, 1000);
-            console.log(values);
+          onSubmit={async (values, actions) => {
+          // const form = new FormData();
+
+          // form.append("nom", values.nom);
+          // form.append("prenom", values.prenom);
+          // form.append("number", values.tel);
+          // form.append("password", values.pwd);
+
+          //   startTransition(() => {
+
+          //     createTodo(form)
+          //   })
+
+                        // createTodo(FormData)
+
+            
+
           }}
           >
             {({ errors, touched, values}) => (
-            <Form className="flex h-screen w-screen justify-center items-center">
+            <form action={createTodo} className="flex h-screen w-screen justify-center items-center">
                   
                 <InputGroup1 
                 values={values}
@@ -49,7 +62,7 @@ export default function SignupForm(){
                 IsNext3={isNext3} setIsNext3={setIsNext3} 
                  />
                 
-            </Form>
+            </form>
             )}
           </Formik>
   )

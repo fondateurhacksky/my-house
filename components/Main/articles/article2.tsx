@@ -34,7 +34,7 @@ export default function Articles2({ isSection3And4Visible }: { isSection3And4Vis
 
             <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                  Eos doloribus nesciunt dolor architecto, saepe aut magni et distinctio deserunt quaerat! Quo 
-                <VoirPlus isHovered={isHovered}/>
+                <VoirPlus/>
             </p>
             </div>
         </article>

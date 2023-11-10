@@ -19,39 +19,42 @@ export default function RegistrationForm(){
           }}
       >
         <Form className="flex flex-col h-screen w-screen justify-center items-center">
+          <div className='flex '>
+
           <div className="mb-4">
-            <label htmlFor="nom">Nom</label>
-            <Field type="text" id="nom" name="nom" />
+            <Field type="text" id="nom" name="nom" placeholder="Nom" />
             <ErrorMessage name="nom" component="div" className="text-red-500" />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="prenom">Prénom</label>
-            <Field type="text" id="prenom" name="prenom" />
+            <Field type="text" id="prenom" name="prenom" placeholder="Prenom"/>
             <ErrorMessage name="prenom" component="div" className="text-red-500" />
           </div>
 
+          </div>
+
+          <div className='flex '>
+
           <div className="mb-4">
-            <label htmlFor="numeroTelephone">Numéro de téléphone</label>
-            <Field type="text" id="numeroTelephone" name="numeroTelephone" />
+            <Field type="text" id="numeroTelephone" name="numeroTelephone" placeholder="Numéro de téléphone"/>
             <ErrorMessage name="numeroTelephone" component="div" className="text-red-500" />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="servicesProposes">Services proposés</label>
-            <Field type="text" id="servicesProposes" name="servicesProposes" />
+            <Field type="text" id="servicesProposes" name="servicesProposes" placeholder="Services proposés"/>
             <ErrorMessage name="servicesProposes" component="div" className="text-red-500" />
+          </div>
+          
           </div>
 
           <div className="mb-4">
-            <label htmlFor="dateNaissance">Date de naissance</label>
-            <Field type="date" id="dateNaissance" name="dateNaissance" />
+          <label htmlFor="dateNaissance">Date de naissance </label>
+            <Field type="date" id="dateNaissance" name="dateNaissance" placeholder="Date de naissance"/>
             <ErrorMessage name="dateNaissance" component="div" className="text-red-500" />
           </div>
 
           <div className="mb-4">
-            <label htmlFor="localite">Localité</label>
-            <Field type="text" id="localite" name="localite" />
+            <Field type="text" id="localite" name="localite" placeholder="Localité"/>
             <ErrorMessage name="localite" component="div" className="text-red-500" />
           </div>
 

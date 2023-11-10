@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import VoireAn from './button/voirAn';
 import Text from "./text";
+import { clsx } from 'clsx';
 
 export default function Section1() {
   const [isSectionVisible, setSectionVisible] = useState(true);
@@ -29,17 +30,18 @@ export default function Section1() {
 
   return (
     <section
-      className={`flex flex-col md:flex-row justify-evenly items-center bg-white border-slate-700 h-screen w-screen ${
-        isSectionVisible ? "opacity-100 transition-opacity duration-500" : "opacity-0 transition-opacity duration-500"
-      }`}
+      className={clsx(`flex flex-col md:flex-row justify-center	md:justify-evenly items-center bg-white border-slate-700 h-screen w-screen`,
+        isSectionVisible && "opacity-100 transition-opacity duration-500", 
+        "opacity-0 transition-opacity duration-500"
+      )}
     >
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center mb-5">
         <Text />
         <VoireAn />
       </div>
 
         <iframe
-          className="lg:w-[400px] lg:h-[330px] w-[300px] h-[250px]"
+          className="lg:w-[400px] lg:h-[330px] w-[300px] h-[250px] mt-5"
           src="https://www.youtube.com/embed/mo5PExrurGY?si=GER8ZI5lplDHf9-u"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

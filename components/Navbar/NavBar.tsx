@@ -4,10 +4,13 @@ import List from "./List";
 import Logo from "./Logo";
 import LogBtn from "./login";
 import HorizontalMenu from "./toggle";
+import FilterBar from "../blog/filterBar";
+import { FilterContext } from "../../app/lib/context";
 
 export default function NavBar() {
   const [isNavVisible, setNavVisible] = useState(true);
-  const [horiVisible, setHoriVisible] = useState(true);
+  const [horiVisible, setHoriVisible] = useState(false);
+  const [state, setState] = useState('invisible')
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -32,7 +35,7 @@ export default function NavBar() {
   function handleClickWindow(e: any){
     const width = window.innerWidth;
     if(horiVisible === true){
-        setHoriVisible(true)
+        setHoriVisible(false)
     }
 
   };
@@ -45,7 +48,12 @@ export default function NavBar() {
         isNavVisible ? "opacity-100 transition-opacity duration-500" : "opacity-0 transition-opacity duration-500"
       }`}
     >
-      <Logo />
+       <FilterContext.Provider value={state}>
+
+      <Logo setState={setState} />
+      <FilterBar />
+
+       </FilterContext.Provider>
       <List horiVisible={horiVisible} />
       <LogBtn />
       <HorizontalMenu horiVisible={horiVisible} setHoriVisible={setHoriVisible} />

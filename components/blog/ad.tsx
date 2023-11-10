@@ -1,8 +1,13 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react";
 
 
 const Ad = ({ nom, prenom, age, description, imageUrl } 
   :{nom:string, prenom:string, age:number, description: string, imageUrl: string}) => {
+     
+    const [interested, setInterested] = useState(false);
+    
   return (
     <div className="align-bg-white rounded-lg h-min items-center shadow-md p-4 m-4 w-72">
 
@@ -21,6 +26,15 @@ const Ad = ({ nom, prenom, age, description, imageUrl }
 
       <h2 className="text-lg  mt-2">{`${nom}  ${prenom} - ${age} ans `}</h2>
       <h3 className="text-lg font-semibold">Ménage - Dormir : Non</h3>
+
+      </div>
+      <div className="flex justify-end">
+          <button
+          onClick={() => setInterested(!interested)}
+          className={`${interested ? 'bg-green-500' : 'bg-gray-300'} px-4 py-2 rounded text-white`}
+        >
+          {interested ? 'Intéresser ' : 'Désintéresser '}  
+        </button>
 
       </div>
     </div>
