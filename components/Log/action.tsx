@@ -12,8 +12,8 @@ export async function createTodo(formData: FormData) {
   try {
 
       const schema = z.object({
-              nom: z.string().min(1),
-              prenom: z.string().min(1),
+              name: z.string().min(1),
+              firstName: z.string().min(1),
               number: z.string().min(1),
               password: z.string().min(1),
             })
