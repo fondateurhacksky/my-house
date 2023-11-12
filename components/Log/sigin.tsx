@@ -1,11 +1,17 @@
 'use client'
-import { useState } from 'react';
+import { useRef } from 'react';
 import { Formik, Form, Field } from "formik";
-import { userSchema, userSchema2 } from "../../utility/utility";
+import { userSchema2 } from "../../utility/utility";
+import { signIn } from 'next-auth/react';
+import NavBar from '../Navbar/NavBar';
 
 
 export default function LoginForm(){
+
+  const formRef = useRef(null);
   return (
+    <main>
+      <NavBar />
       <div className="flex h-screen w-screen justify-center items-center">
           <Formik
       initialValues={{
@@ -13,16 +19,24 @@ export default function LoginForm(){
         password: '',
       }}
       validationSchema={userSchema2}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
-        console.log(values);
+      onSubmit={async (values, actions) => {
+
+        if(formRef.current){
+          const form = new FormData(formRef.current);
+          signIn('credentials', {name: form.get('identifier'), 
+          password: form.get('password'),
+          redirect: false
+        });
+        }
+        // setTimeout(() => {
+        //   alert(JSON.stringify(values, null, 2));
+        //   actions.setSubmitting(false);
+        // }, 1000);
+        // console.log(values);
       }}
     >
             {({ errors, touched }) => (
-    <Form className='flex flex-col sm:bg-white sm:shadow-lg p-5 sm:border sm:border-orange-500 sm:w-80 justify-center	items-center p-5 '>
+    <Form ref={formRef} className='flex flex-col sm:bg-white sm:shadow-lg p-5 sm:border sm:border-orange-500 sm:w-80 justify-center	items-center p-5 '>
         <div className="mt-4 w-full">
             <Field
               type="text"
@@ -59,5 +73,6 @@ export default function LoginForm(){
             )}
           </Formik>
       </div>
+      </main>
   )
 };

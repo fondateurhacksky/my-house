@@ -4,6 +4,8 @@ import { FormikErrors, FormikTouched } from "formik";
 import { FormValues  } from "../../../utility/utility";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useEffect } from "react";
+import { useFormStatus } from "react-dom";
+import clsx from "clsx";
 
 export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }: 
     { errors: FormikErrors<FormValues>, touched: FormikTouched<FormValues>,
@@ -11,6 +13,7 @@ export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }:
     }) {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const { pending } = useFormStatus()
 
     const [isValid, setIsValid] = useState(false);
     useEffect(() => {
@@ -62,12 +65,15 @@ export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }:
             </div>
 
             <button 
-        className={`w-4/6 sm:w-full bg-blue-500 hover:bg-blue-700 text-slate-50 p-2 hover:shadow-xl my-5 
-        ${isValid ? 'opacity-100 bg-blue-700 cursor-default	' : 'opacity-75 bg-slate-500 cursor-not-allowed	'}`}        
-        type="submit"
+                className={`w-4/6 sm:w-full bg-blue-500  text-slate-50 p-2  my-5 
+                ${isValid ? 'opacity-100 bg-blue-700 cursor-default	hover:bg-blue-700 hover:shadow-xl' : 'opacity-75 bg-slate-500 cursor-not-allowed'}`}        
+                type="submit"
+                onClick={() =>{
+                    setIsValid(false)
+                }}
                 >
-            Submit
-        </button>
+                Submit
+            </button>
         </div>
     );
 }

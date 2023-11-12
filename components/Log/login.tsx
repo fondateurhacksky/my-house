@@ -4,44 +4,36 @@ import { userSchema, initialValuesSign } from "../../utility/utility";
 import  InputGroup1  from "./inputGroup/group1";
 import  InputGroup2  from "./inputGroup/group2";
 import  InputGroup3  from "./inputGroup/group3";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createTodo } from "../../app/lib/data";
-import { useTransition } from "react";
+import NavBar from "../Navbar/NavBar";
+
+
 export default function SignupForm(){
 
   const [isNext1, setIsNext1] = useState(true);
   const [isNext2, setIsNext2] = useState(false);
   const [isNext3, setIsNext3] = useState(false);
 
- const [isPending, startTransition] = useTransition()
-
+  const formRef = useRef(null);
 
   return (
+    <main>
+          <NavBar />
           <Formik
           initialValues={initialValuesSign}
           validationSchema={userSchema}
           
-          onSubmit={async (values, actions) => {
-          // const form = new FormData();
 
-          // form.append("nom", values.nom);
-          // form.append("prenom", values.prenom);
-          // form.append("number", values.tel);
-          // form.append("password", values.pwd);
-
-          //   startTransition(() => {
-
-          //     createTodo(form)
-          //   })
-
-                        // createTodo(FormData)
-
-            
-
+          onSubmit={async () => {
+            if(formRef.current){
+              const form = new FormData(formRef.current);
+              createTodo(form).then((e) => console.log(e)).catch(() => alert('An error occurred. Please try again later.'));
+            }
           }}
           >
             {({ errors, touched, values}) => (
-            <form action={createTodo} className="flex h-screen w-screen justify-center items-center">
+            <Form ref={formRef} className="flex h-screen w-screen justify-center items-center">
                   
                 <InputGroup1 
                 values={values}
@@ -62,8 +54,9 @@ export default function SignupForm(){
                 IsNext3={isNext3} setIsNext3={setIsNext3} 
                  />
                 
-            </form>
+            </Form>
             )}
           </Formik>
+          </main>
   )
 };

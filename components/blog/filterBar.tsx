@@ -25,16 +25,16 @@ export default function FilterBar(){
     return(
         <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center h-auto w-full top-20 `,filter,
         pathname === '/blog/annonces' && '',
-     !(pathname === '/blog/annonces') && 'hidden'
+     !(pathname === '/blog/annonces') && 'invisible'
         )}> 
         <div>
              <Select 
               options={ageOptions}
               placeholder={"Preference d'age"}
               name="gender" 
-              id="long-value-select"
-              instanceId="long-value-select"
-            //   onChange={(option) =>setGender(option.value)}
+              id="p"
+              instanceId="p"
+              // onChange={(option) =>setGender(option.value)}
               styles={{
                 control: (baseStyles, state) => ({
                   ...baseStyles,
@@ -66,8 +66,8 @@ export default function FilterBar(){
               options={genderOptions}
               placeholder={'Préference du genre'}
               name="salary" 
-              id="long-value-select"
-              instanceId="long-value-select"
+              id="g"
+              instanceId="g"
             //   onChange={(option) =>setsalary(option.value)}
               styles={{
                 control: (baseStyles, state) => ({
@@ -100,8 +100,8 @@ export default function FilterBar(){
               options={religionOptions}
               placeholder={'Preference relligieuse'}
               name="salary" 
-              id="long-value-select"
-              instanceId="long-value-select"
+              id="r"
+              instanceId="r"
             //   onChange={(option) =>setsalary(option.value)}
               styles={{
                 control: (baseStyles, state) => ({

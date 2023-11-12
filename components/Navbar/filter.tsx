@@ -11,7 +11,7 @@
   return (
     <button
     onClick={() => setState(filter === 'visible' ? 'invisible' : 'visible')}
-    className={clsx('flex items-center	bg-black w-auto p-1 rounded cursor-pointer	font-bold ml-3',
+    className={clsx('flex items-center	bg-slate-600 px-2 w-auto  rounded cursor-pointer	font-bold ml-3',
      pathname === '/blog/annonces' && '',
      !(pathname === '/blog/annonces') && 'hidden'
      )}>
