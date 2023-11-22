@@ -1,6 +1,6 @@
 
 import Link from 'next/link'
-import { posts } from "../../utility/utility";
+import { posts } from "../../app/lib/utility";
 import { clsx } from 'clsx'
 import { usePathname } from 'next/navigation';
 

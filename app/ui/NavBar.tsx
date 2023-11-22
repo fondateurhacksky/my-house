@@ -1,11 +1,11 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import List from "./List";
-import Logo from "./Logo";
-import LogBtn from "./login";
-import HorizontalMenu from "./toggle";
-import FilterBar from "../blog/filterBar";
-import { FilterContext } from "../../app/lib/context";
+import List from "../../components/Navbar/List";
+import Logo from "../../components/Navbar/Logo";
+import HorizontalMenu from "../../components/Navbar/toggle";
+import FilterBar from "../../components/blog/filterBar";
+import { FilterContext } from "../lib/context";
+import AccountPage from "../../components/Navbar/login";
 
 export default function NavBar() {
   const [isNavVisible, setNavVisible] = useState(true);
@@ -50,12 +50,13 @@ export default function NavBar() {
     >
        <FilterContext.Provider value={state}>
 
-      <Logo setState={setState} />
-      <FilterBar />
+          <Logo setState={setState} />
+          <FilterBar />
 
        </FilterContext.Provider>
       <List horiVisible={horiVisible} />
-      <LogBtn />
+      <AccountPage />
+      
       <HorizontalMenu horiVisible={horiVisible} setHoriVisible={setHoriVisible} />
     </nav>
   );

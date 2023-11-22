@@ -1,4 +1,3 @@
-import NavBar from "../../components/user/page"
 
 export default function UserLayout({
     children,
@@ -6,7 +5,7 @@ export default function UserLayout({
     children: React.ReactNode
   }) {
     return (
-    <section>
+    <main>
         {children}
-    </section>)
+    </main>)
   }

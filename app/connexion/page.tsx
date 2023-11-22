@@ -1,4 +1,4 @@
-import LoginForm from '../../components/Log/sigin';
+import LoginForm from '../../components/Log/log';
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
@@ -6,7 +6,5 @@ export const metadata: Metadata = {
 }
 
 export default function Login() {
-  
     return <LoginForm />;
-
 }

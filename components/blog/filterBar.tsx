@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import Select from 'react-select';
-import { ageOptions, genderOptions, religionOptions} from '../../utility/utility';
+import { ageOptions, genderOptions, religionOptions} from '../../app/lib/place-holder-data';
 import { VscPersonAdd } from 'react-icons/vsc';
 import Filter from "../Navbar/filter";
 import { clsx }  from 'clsx'
@@ -23,9 +23,8 @@ export default function FilterBar(){
 
 
     return(
-        <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center h-auto w-full top-20 `,filter,
-        pathname === '/blog/annonces' && '',
-     !(pathname === '/blog/annonces') && 'invisible'
+        <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center left-52 top-20 h-auto`,filter,
+     !(pathname === '/blog/annonces') && 'hidden'
         )}> 
         <div>
              <Select 
@@ -40,6 +39,7 @@ export default function FilterBar(){
                   ...baseStyles,
                   borderColor: state.isFocused ? 'grey' : '#3498db',
                   width: 240,
+                  margin: 20
                 }),
                 placeholder: (base) => ({
                   ...base,
@@ -57,7 +57,6 @@ export default function FilterBar(){
                   primary: '#3498db',
                 },
               })}
-              className="m-5"
                />
           </div>
 
@@ -74,6 +73,7 @@ export default function FilterBar(){
                   ...baseStyles,
                   borderColor: state.isFocused ? 'grey' : '#3498db',
                   width: 240,
+                  margin: 20
                 }),
                 placeholder: (base) => ({
                   ...base,
@@ -91,7 +91,6 @@ export default function FilterBar(){
                   primary: '#3498db',
                 },
               })}
-              className="m-5"
                />
           </div>
 
@@ -108,6 +107,7 @@ export default function FilterBar(){
                   ...baseStyles,
                   borderColor: state.isFocused ? 'grey' : '#3498db',
                   width: 240,
+                  margin: 20
                 }),
                 placeholder: (base) => ({
                   ...base,
@@ -125,7 +125,6 @@ export default function FilterBar(){
                   primary: '#3498db',
                 },
               })}
-              className="m-5"
                />
           </div>
 

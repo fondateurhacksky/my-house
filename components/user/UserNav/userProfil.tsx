@@ -1,20 +1,30 @@
-import Image from "next/image"
+'use client'
+import { useSession } from 'next-auth/react';
+import Avatar from './avatar';
+import ProfilText from '../../../app/ui/profilText';
+
+
 export default function UserProfil() {
-    return(
-        <div className="flex gap-4">
-            <div className="">
-              <Image
-                src="/users/siaka.jpg" 
-                alt="Photo de profil"
-                width={100}
-                height={100}
-                className="m-2 rounded"
-              />
-            </div>
-            <div className=" items-center flex flex-col justify-center p-4 rounded-lg">
-              <h3 className="">Nom : Toure </h3>
-              <h3 className="">Prenom : Siaka </h3>
-            </div>
-          </div>
-    )
+  const { data: session, status } = useSession();
+
+  // Vérifiez si la session est chargée
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  // Si l'utilisateur est connecté, affichez ses informations
+  if (session?.user) {
+    const { name, image } = session.user;
+
+    // Fonction de chargement d'image personnalisée
+        return (
+      <div className="bg-blue-500 flex p-4 m-4 rounded-sm items-center ">
+        {image ? (<Avatar src={image} />) : (<ProfilText name={name} />)}
+
+        <div className="text-white px-2 w-full">
+          <h3 className="">{name}</h3>
+        </div>
+      </div>
+    );
+  }
 }

@@ -1,30 +1,3 @@
-/*
-  Warnings:
-
-  - The primary key for the `User` table will be changed. If it partially fails, the table could be left without primary key constraint.
-  - You are about to drop the column `createdAt` on the `User` table. All the data in the column will be lost.
-  - You are about to drop the column `nom` on the `User` table. All the data in the column will be lost.
-  - You are about to drop the column `prenom` on the `User` table. All the data in the column will be lost.
-  - Added the required column `firstName` to the `User` table without a default value. This is not possible if the table is not empty.
-  - Added the required column `name` to the `User` table without a default value. This is not possible if the table is not empty.
-
-*/
--- DropIndex
-DROP INDEX "User_nom_key";
-
--- AlterTable
-ALTER TABLE "User" DROP CONSTRAINT "User_pkey",
-DROP COLUMN "createdAt",
-DROP COLUMN "nom",
-DROP COLUMN "prenom",
-ADD COLUMN     "firstName" TEXT NOT NULL,
-ADD COLUMN     "name" TEXT NOT NULL,
-ALTER COLUMN "id" DROP DEFAULT,
-ALTER COLUMN "id" SET DATA TYPE TEXT,
-ALTER COLUMN "number" DROP NOT NULL,
-ADD CONSTRAINT "User_pkey" PRIMARY KEY ("id");
-DROP SEQUENCE "User_id_seq";
-
 -- CreateTable
 CREATE TABLE "Account" (
     "id" TEXT NOT NULL,
@@ -54,6 +27,22 @@ CREATE TABLE "Session" (
 );
 
 -- CreateTable
+CREATE TABLE "User" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "email" TEXT,
+    "emailVerified" TIMESTAMP(3),
+    "number" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "image" TEXT,
+    "interest" TEXT[],
+    "avatar" TEXT,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "VerificationToken" (
     "identifier" TEXT NOT NULL,
     "token" TEXT NOT NULL,
@@ -65,6 +54,12 @@ CREATE UNIQUE INDEX "Account_provider_providerAccountId_key" ON "Account"("provi
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Session_sessionToken_key" ON "Session"("sessionToken");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_number_key" ON "User"("number");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "VerificationToken_token_key" ON "VerificationToken"("token");
