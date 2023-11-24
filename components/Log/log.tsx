@@ -35,19 +35,24 @@ export default function LoginForm(){
           }}
         >
           {({ errors, touched }) => (
-          <Form ref={formRef} className='flex flex-col w-80 justify-center items-center'>
+          <Form ref={formRef} className='flex flex-col w-80 justify-center items-center p-2 py-6 rounded border-2 border-slate-300'>
               <InputG1 errors={errors} touched={touched} />
               <InputG2 errors={errors} touched={touched} />
-              <LogBtn/>       
+              <LogBtn/> 
+              <span 
+              className="text-black-500 text-xs mt-4 cursor-pointer	"
+              >Mot de passe oublié ?
+              </span>      
           </Form>
             
           )}
         </Formik>
-        <div className="flex items-center w-80 my-4">
+        <div className="flex items-center w-80 my-2">
               <div className="flex-1 h-0.5 bg-slate-700"></div>
               <p className="text-slate-700 px-4">or</p>
               <div className="flex-1 h-0.5 bg-slate-700"></div>
         </div>
+
       <div className=" flex flex-col justify-around	 w-80">
         <FacebookProvider/>
         <GoogleProvider/>

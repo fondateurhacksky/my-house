@@ -2,12 +2,13 @@ import Image from "next/image";
 
 export default function Avatar({src} : {src:string}) {
   return (
-    <div className="shadow-2xl">
+    <div className="">
       <Image 
       src={src} 
-      width={40}
-      height={40}
+      width={100}
+      height={100}
       alt="Photo de Profile" 
+      className="rounded-full border-2 border-gray-400"
       />
     </div>
   );

@@ -12,7 +12,7 @@ const Annonces = () => {
   return (
     <main>
       <NavBar />
-    <div className="flex justify-start justify-center h-full w-full pt-16">
+    <div className="h-full w-full pt-20">
       <div className='flex justify-center flex-wrap relative '>
    
       {ads.map((ad, index) => (

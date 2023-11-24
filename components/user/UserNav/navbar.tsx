@@ -1,42 +1,59 @@
 'use client'
 import Link from "next/link";
-import { signOut} from "next-auth/react"
+import { signOut } from "next-auth/react";
+import clsx from "clsx";
+// import { navItems } from "../../../app/lib/utility";
+import UserProfil from "./userProfil";
+import { FaPowerOff } from "react-icons/fa6";
+import { CiHome } from "react-icons/ci";
+import { TfiAnnouncement } from 'react-icons/tfi';
+import { MdInterests } from "react-icons/md";
+import { ImProfile } from "react-icons/im";
+import { SiAcclaim } from "react-icons/si";
+
+
+
+
+
+
+export const navItems = [
+  { href: "/", label: "Accueil", icon: CiHome },
+  { href: "/blog/annonces", label: "Annonces", icon: TfiAnnouncement },
+  { href: "/interests", label: "Mes intérêts", icon: MdInterests },
+  { href: "/profile", label: "Mon profil", icon: ImProfile },
+  { href: "/reclamation", label: "Reclamations", icon: SiAcclaim }
+];
 
 
 export default function NavUser() {
+  const handleSignOut = () => {
+    signOut();
+  };
+
   return (
-    <ul className="flex flex-col justify-around justify-center items-center m-4 rounded-sm h-full bg-gray-400">
-
-      <li >
-        <Link 
-        href="/"
-        className="text-white hover:bg-gray-300 hover:text-black rounded-md py-4 px-8 text-center"
+    <ul className="flex flex-col  justify-center items-center h-full ">
+      <UserProfil/>
+      {navItems.map((item, index) => (
+        <li
+          key={index}
+          className="w-56 h-12 text-base rounded-md flex my-1 items-center"
         >
-          Acceuil</Link>
-      </li>
+          <Link
+            href={item.href}
+            className="flex grow items-center justify-center w-80 bg-slate-100 text-black rounded-md py-3 hover:bg-blue-200 hover:text-blue-500"
+          >
+             <item.icon className="w-6 h-4 "/>{item.label}
+          </Link>
+        </li>
+      ))}
 
-      <li>
-        <Link 
-        href="/"
-        className="text-white hover:bg-gray-300 hover:text-black rounded-md py-4 px-8 text-center" 
-        >Mon profil</Link>
-      </li>
-
-      <li>
-        <Link 
-        href=""
-        className="text-white hover:bg-gray-300 hover:text-black rounded-md py-4 px-8 text-center"
-        >Mes intérêts</Link>
-      </li>
-
-      <li 
-       onClick={(e) => {
-        signOut()
-      }}
-      className="text-white hover:bg-gray-300 hover:text-black rounded-md py-4 px-8 text-center cursor-pointer">
-        Déconnexion
-      </li>
-      
+      <button
+        onClick={handleSignOut}
+        className="text-base w-30 p-4 rounded-md bg-slate-100 flex self-start ml-2 items-center hover:bg-red-100 hover:text-red-500 py-3 my-2 text-center cursor-pointer"
+      >
+        <FaPowerOff className="mx-2"/>
+ Déconnexion
+      </button>
     </ul>
   );
 }

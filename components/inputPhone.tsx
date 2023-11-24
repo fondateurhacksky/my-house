@@ -1,6 +1,6 @@
 import { useField } from "formik";
-import Input from 'react-phone-number-input/input';
-import { PhoneInputFieldProps } from "../app/lib/utility";
+import Input, { getCountries } from 'react-phone-number-input/input';
+import { PhoneInputFieldProps } from "../app/lib/definition";
 
 const PhoneInputField: React.FC<PhoneInputFieldProps> = ({ value, name, type, handleFocus }) => {
   const [field, meta, helpers] = useField(name);
@@ -13,10 +13,9 @@ const PhoneInputField: React.FC<PhoneInputFieldProps> = ({ value, name, type, ha
     <Input
       {...field}
       type={type}
+      placeholder="Enter phone number"
       country="CI"
-      international
-      withCountryCallingCode
-      className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-12 pl-1"
+      className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10"
       value={value}
       onChange={handlePhoneChange}
       onFocus={() => handleFocus(name)}

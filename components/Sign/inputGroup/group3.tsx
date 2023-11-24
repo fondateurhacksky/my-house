@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Field, useFormikContext } from "formik";
 import { FormikErrors, FormikTouched } from "formik";
-import { FormValues  } from "../../../app/lib/utility";
+import { FormValues  } from "../../../app/lib/definition";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useEffect } from "react";
 import { useFormStatus } from "react-dom";
@@ -37,7 +37,7 @@ export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }:
                     type={showPassword ? "text" : "password"}
                     name="pwd"
                     id="pwd"
-                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-12 w-full"
+                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 w-full"
                     placeholder="Crée un mot de passe"
                 />
                 <button type="button" onClick={() => setShowPassword(!showPassword) } className="absolute top-1/3 -translate-y-1/2 right-3 text-gray-500 focus:outline-none">
@@ -53,7 +53,7 @@ export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }:
                     type={showConfirmPassword ? "text" : "password"}
                     name="confirmPwd"
                     id="confirmPwd"
-                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-12 w-full"
+                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 w-full"
                     placeholder="Confirmer le mot de passe"
                 />
                 <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword) } className="absolute top-1/3 -translate-y-1/2 right-3 text-gray-500 focus:outline-none">
@@ -65,7 +65,7 @@ export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }:
             </div>
 
             <button 
-                className={`w-4/6 sm:w-full bg-blue-500  text-slate-50 p-2  my-5 
+                className={`rounded w-4/6 sm:w-full bg-blue-500  text-slate-50 p-2 
                 ${isValid ? 'opacity-100 bg-blue-700 cursor-default	hover:bg-blue-700 hover:shadow-xl' : 'opacity-75 bg-slate-500 cursor-not-allowed'}`}        
                 type="submit"
                 onClick={() =>{

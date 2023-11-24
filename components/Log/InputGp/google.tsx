@@ -4,13 +4,12 @@ export default function GoogleProvider(){
     return(
         <button
         type='button'
-          className="text-sm bg-slate-300 text-black hover:text-white font-semibold p-2 border rounded-md hover:bg-blue-900 w-full mb-2 
-          hover:bg-gradient-to-r from-red-700  to-blue-700"
+          className="text-sm bg-slate-50 text-black hover:text-green-900 font-semibold p-2 border rounded-md hover:bg-gradient-to-br from-red-500 via-yellow-500 to-yellow-400 w-full mb-2 hover:shadow-lg
+          "
           onClick={() => {
              signIn('google', {
               callbackUrl: 'http://localhost:3000/user', // Ton URL de callback
             });
-            // signOut()
           }}
         >
           Se Connecter avec Google

@@ -4,7 +4,7 @@ export default function FacebookProvider(){
     return(
         <button
         type='button'
-          className="text-sm bg-slate-300 text-black hover:text-white font-semibold p-2 border rounded-md hover:bg-blue-900 w-full mb-2"
+          className="text-sm bg-slate-50 text-black hover:text-white font-semibold p-2 border rounded-md hover:bg-blue-900 w-full mb-2 hover:shadow-lg "
           onClick={() => {
              signIn('facebook', {
               callbackUrl: 'http://localhost:3000/user', // Ton URL de callback

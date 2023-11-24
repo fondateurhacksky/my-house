@@ -104,3 +104,26 @@ export const ads = [
     { label: 'Musulman', value: 'M'},
     { label: 'Autre', value: 'A'},
   ];
+
+  export const communeOptions = [
+    { label: 'Abobo', value: 'Abobo' },
+    { label: 'Adjamé', value: 'Adjamé' },
+    { label: 'Cocody', value: 'Cocody' },
+    { label: 'Yopougon', value: 'Yopougon' },
+    { label: 'Marcory', value: 'Marcory' },
+    { label: 'Treichville', value: 'Treichville' },
+    { label: 'Plateau', value: 'Plateau' },
+    { label: 'Koumassi', value: 'Koumassi' },
+    { label: 'Atécoubé', value: 'Atécoubé' },  
+  ];
+  export const servicesOptions = [
+    { label: 'Service de ménage', value: 'menage' },
+    { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
+    { label: 'Aide à domicile', value: 'aide_domicile' },
+    { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
+    { label: 'Jardinier/Jardinière', value: 'jardinier' },
+    { label: 'Chauffeur', value: 'chauffeur' },
+    { label: 'Personnel de sécurité', value: 'securite' },
+    // ... Vous pouvez ajouter d'autres services ici selon vos besoins
+  ];
+  

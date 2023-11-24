@@ -1,13 +1,11 @@
 'use client'
 import { useSession } from 'next-auth/react';
 import Avatar from './avatar';
-import ProfilText from '../../../app/ui/profilText';
 
 
 export default function UserProfil() {
   const { data: session, status } = useSession();
 
-  // Vérifiez si la session est chargée
   if (status === 'loading') {
     return <div>Loading...</div>;
   }
@@ -18,10 +16,10 @@ export default function UserProfil() {
 
     // Fonction de chargement d'image personnalisée
         return (
-      <div className="bg-blue-500 flex p-4 m-4 rounded-sm items-center ">
-        {image ? (<Avatar src={image} />) : (<ProfilText name={name} />)}
+      <div className="flex rounded bg-blue-500  w-56 p-4 mb-4 h-32 items-end ">
+        {image && <Avatar src={image} />}
 
-        <div className="text-white px-2 w-full">
+        <div className="text-white font-bold px-2 mb-6 w-full">
           <h3 className="">{name}</h3>
         </div>
       </div>

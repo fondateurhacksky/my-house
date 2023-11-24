@@ -22,6 +22,7 @@ export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNex
       });
 
         useEffect(() => {
+          
             if (!(errors.nom || errors.prenom || errors.tel) && focusedInputs.nom && focusedInputs.prenom && focusedInputs.tel) {
               setIsValid(true);
             } else {
@@ -45,7 +46,7 @@ export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNex
 
 
     return(
-        <div className={`flex flex-col bg-slate-80 sm:shadow-lg p-5 absolute sm:border sm:border-orange-500 m-3 h-80 sm:w-96 p-5  sm:h-auto justify-center	items-center sm:items-stretch			
+        <div className={`flex flex-col bg-slate-80 sm:shadow-lg p-3 absolute sm:border sm:border-orange-200 m-3 h-80 sm:w-96 p-5  sm:h-auto justify-center	items-center sm:items-stretch			
         ${isNext1 ? 'opacity-100 visible transition-opacity ease-in-out duration-500' : ' opacity-0 invisible'}
         `} >
 
@@ -54,7 +55,7 @@ export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNex
                     name="nom" 
                     id="nom" 
                     placeholder="Nom" 
-                    className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-12 pl-1"
+                    className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
                     onFocus={() => handleFocus("nom")}
                     />
                     <span className="block h-8 w-full text-red-700 text-xs">{touched.nom && errors.nom ? errors.nom : ' '}</span>
@@ -64,7 +65,7 @@ export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNex
                     name="prenom" 
                     id="prenom" 
                     placeholder="Prenom" 
-                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-12 pl-1"
+                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
                     onFocus={() => handleFocus("prenom")}
                     />
                     <span className=" bg-inherit block h-8  w-full text-red-700  text-xs">{touched.prenom && errors.prenom ? errors.prenom : ' '}</span>

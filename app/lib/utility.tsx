@@ -55,3 +55,11 @@ export const userSchema = object().shape({
 export  const posts = [{'id':1, 'slug':'/', 'title':'Accueil','display' : ''}, {'id':2, 'slug':'/blog/annonces', 'title':'Annonces','display' : ''},{'id':3,'slug':'/connexion', 'title':'Connexion', 'display' : 'sm:hidden'}, {'id':4,'slug':'/inscription', 'title':"S'inscrire", 'display' : 'sm:hidden'}]
 
 export const logs = [{'id':1,'slug':'/connexion', 'title':'Connexion'}, {'id':2,'slug':'/inscription', 'title':"S'inscrire"}]
+
+// export const navItems = [
+//   { href: "/", label: "Accueil", icon: CiHome },
+//   { href: "/blog/annonces", label: "Annonces" },
+//   { href: "/interests", label: "Mes intérêts" },
+//   { href: "/profile", label: "Mon profil" },
+//   { href: "/reclamation", label: "Reclamations" }
+// ];

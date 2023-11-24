@@ -6,22 +6,22 @@ import { FormikErrors, FormikTouched } from "formik";
 export default function InputG1({errors, touched}:{errors: FormikErrors<formLog>, touched: FormikTouched<formLog>,
    }){
     return(
-        <div className="w-full">
+        <div className="">
           <div className="relative">
             <Field
               type="text"
               id="identifier"
               name="identifier"
-              className="peer w-full bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-300 h-6"
+              className="peer  opacity-75 bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-300 h-6"
               required
             />
 
             <label
               htmlFor="identifier"
-              className="peer-focus:bottom-10 peer-valid:bottom-10 peer-valid:text-sm peer-focus:opacity-75 peer-valid:opacity-75 peer-focus:text-sm text-base opacity-50 absolute transition-all duration-500
+              className="peer-focus:bottom-10 peer-valid:bottom-10 peer-valid:text-sm peer-focus:opacity-60 peer-valid:opacity-75 peer-focus:text-sm text-base opacity-30 absolute transition-all duration-500
               left-0 pointer-events-none"
             >
-              Email ou Numéro de téléphone
+              Numéro de téléphone
             </label>
 
             <span className="block h-4 text-red-700 text-xs">

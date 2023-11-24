@@ -44,16 +44,15 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`flex justify-between bg-white shadow-lg border-b border-slate-500 text-sm z-50 fixed w-full ${
+      className={`flex justify-between bg-white shadow-lg border-b border-slate-500 text-xs z-50 fixed w-full ${
         isNavVisible ? "opacity-100 transition-opacity duration-500" : "opacity-0 transition-opacity duration-500"
       }`}
     >
        <FilterContext.Provider value={state}>
-
           <Logo setState={setState} />
           <FilterBar />
-
        </FilterContext.Provider>
+       
       <List horiVisible={horiVisible} />
       <AccountPage />
       

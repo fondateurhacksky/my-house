@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 export default function List({ horiVisible }: { horiVisible: boolean }) {
         const  pathname  = usePathname();
         return (
-          <ul className={clsx(` transition-all duration-300 absolute sm:static sm:h-auto h-screen text-white sm:text-black z-30 inset-y-0 right-0 shadow-2xl sm:shadow-none text-base sm:text-xl flex flex-col sm:flex-row sm:pt-0 pt-16 items-center font-medium bg-slate-700 sm:bg-white sm:w-auto
+          <ul className={clsx(`transition-all duration-300 absolute sm:static sm:h-auto h-screen text-white sm:text-black z-30 inset-y-0 right-0 shadow-2xl sm:shadow-none text-xs sm:text-base flex flex-col sm:flex-row sm:pt-0 pt-16 items-center font-medium bg-slate-700 sm:bg-white sm:w-auto
           [&>*:not(:first-child)]:border-t-2 sm:[&>*:not(:first-child)]:border-t-2 [&>*:not(:first-child)]:border-slate-50 sm:[&>*:not(:first-child)]:border-slate-500 sm:[&>*:not(:first-child)]:ml-2`, horiVisible === false && 'w-0',
           horiVisible === true && 'w-3/5'
           )}
