@@ -1,6 +1,6 @@
 import { useField } from "formik";
-import Input, { getCountries } from 'react-phone-number-input/input';
-import { PhoneInputFieldProps } from "../app/lib/definition";
+import Input from 'react-phone-number-input/input';
+import { PhoneInputFieldProps } from "../lib/definition";
 
 const PhoneInputField: React.FC<PhoneInputFieldProps> = ({ value, name, type, handleFocus }) => {
   const [field, meta, helpers] = useField(name);

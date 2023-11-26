@@ -3,21 +3,24 @@ import { communeOptions, servicesOptions } from '../../../app/lib/place-holder-d
 
 export default function InputSelect(){
     return (
-        <div className='flex '>
+        <div className='flex flex-col md:flex-row justify-around w-1/3'>
 
+            <div className='w-1/2'>
             <Select
                 className="basic-single"
                 classNamePrefix="select"
                 placeholder={"Localité"}
                 isSearchable={true}
-                name="color"
+                name="localité"
                 options={communeOptions}
                 styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
-                      borderColor: state.isFocused ? '#3498db' : 'grey' ,
-                      width: 200,
-                      margin: 20
+                      borderWidth:2,
+                      borderColor: state.isFocused ? '#2563eb' : '#e2e8f0' ,
+                      width: 205,
+                      padding:2,
+                      marginLeft:7,
                     }),
                     placeholder: (base) => ({
                       ...base,
@@ -29,6 +32,7 @@ export default function InputSelect(){
                   theme={(theme) => ({
                     ...theme,
                     borderRadius: 5,
+                    borderWidth:20,
                     colors: {
                       ...theme.colors,
                       primary25: 'hotpink',
@@ -36,20 +40,25 @@ export default function InputSelect(){
                     },
                   })}
             />
+            </div>
+
+            <div className=''>
 
             <Select
                 className="basic-single"
                 classNamePrefix="select"
                 placeholder={"Service proposé"}
                 isSearchable={true}
-                name="color"
+                name="service"
                 options={servicesOptions}
                 styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
-                      borderColor: state.isFocused ? '#3498db' : 'grey' ,
-                      width: 200,
-                      margin: 20
+                      borderWidth:2,
+                      borderColor: state.isFocused ? '#2563eb' : '#e2e8f0' ,
+                      width: 205,
+                      padding:2,
+                      marginRight:16,
                     }),
                     placeholder: (base) => ({
                       ...base,
@@ -68,6 +77,7 @@ export default function InputSelect(){
                     },
                   })}
             />
+            </div>
 
         
         </div>

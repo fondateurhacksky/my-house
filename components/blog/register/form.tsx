@@ -1,14 +1,28 @@
-import {Form} from 'formik';
+import {Form, Formik, useFormikContext} from 'formik';
 import InputSelect from './select';
 import CheckOption from './checked';
-import PersonalInfo from './info/infoPerso';
-
+import { blogSchema, initialValues } from '../../../app/lib/utility';
+import Name from './info/name';
+import Adresse from './info/adresse';
 
 
 export default function Forms(){
+
     return(
+        <Formik
+        initialValues={initialValues}
+        validationSchema={blogSchema}
+        onSubmit={(values, actions) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            actions.setSubmitting(false);
+          }, 1000);
+        }}
+      >
+        {({ errors, touched, values}) => (
         <Form className="flex flex-col h-screen w-screen justify-center items-center">
-                <PersonalInfo />
+                <Name/>
+                <Adresse/>
                 <InputSelect />
                 <CheckOption />
                 
@@ -18,6 +32,7 @@ export default function Forms(){
                 text-white p-2 rounded w-1/3 hover:bg-blue-800 shadow-2xl">
                 S'inscrire
                 </button>
-      </Form>
+      </Form>)}
+      </Formik>
     )
 }

@@ -8,12 +8,15 @@ export const initialValuesLog = {
 export const initialValues = {
   nom: '',
   prenom: '',
-  numeroTelephone: '',
-  servicesProposes: '',
-  dateNaissance: '',
-  localite: '',
-  possibiliteDormir: false,
-};
+  dateDeNaissance: '',
+  localité: '',
+  service:'',
+  numeroDeTelephone: '',
+  dormir: '',
+  typeContrat: '',
+  codeTuteur: '',
+  details: '',
+}
 export const initialValuesSign ={
   nom:'',
   prenom:'',
@@ -26,8 +29,8 @@ export const blogSchema = object().shape({
   nom: string().required('Le nom est requis'),
   prenom: string().required('Le prénom est requis'),
   numeroTelephone: string().required('Le numéro de téléphone est requis'),
-  servicesProposes: string().required('Les services proposés sont requis'),
   dateNaissance: date().required('La date de naissance est requise'),
+  servicesProposes: string().required('Les services proposés sont requis'),
   localite: string().required('La localité est requise'),
 });
 

@@ -2,7 +2,12 @@ export interface PhoneInputFieldProps {
     value: string;
     name: string;
     type: string;
-    handleFocus: (fieldName: string) => void;
+    handleFocus: (fieldName: string) => void | null;
+  }
+  export interface NumberInputFieldProps {
+    value: string;
+    name: string;
+    type: string;
   }
   
   export interface FormValues   {

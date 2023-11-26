@@ -1,29 +1,39 @@
-import { Field, ErrorMessage } from 'formik';
+import { Field, useFormikContext } from 'formik';
 
+
+type errors = {
+    nom: string,
+    prenom: string,
+
+}
 
 export default function Name(){
+    
+    const { touched, errors } = useFormikContext<errors>();
+    
     return(
-         <div className='flex justify-center justify-around items-center w-1/3 h-20'>
+         <div className='flex flex-col md:flex-row w-1/3 pl-2.5'>
 
-            <div className="">
+            <div className="w-1/2">
                     <Field 
                     type="text" 
                     name="nom" 
                     placeholder="Nom"
-                    className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 " 
+                    className="pl-2 w-11/12 bg-white border-2 rounded  border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2" 
                     />
-                    <ErrorMessage name="nom" component="div" className="text-red-500" />
+                    <span className="block h-8 w-full text-red-700 text-xs">{touched.nom && errors.nom ? errors.nom : ' '}</span>
             </div>
 
-            <div className="">
+            <div className="w-1/2">
                 <Field 
                 type="text" 
                 name="prenom" 
                 placeholder="Prenom"
-                className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
+                className="w-11/12 pl-2 bg-white border-2 rounded  border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2" 
                 />
-                <ErrorMessage name="prenom" component="div" className="text-red-500" />
+                <span className="block h-8 w-full text-red-700 text-xs">{touched.prenom && errors.prenom ? errors.prenom : ' '}</span>
             </div>
-    </div>
+
+        </div>
     )
 }
