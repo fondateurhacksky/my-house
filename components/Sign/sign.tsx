@@ -32,30 +32,22 @@ export default function SignupForm(){
             }
           }}
           >
-            {({ errors, touched, values}) => (
             <Form ref={formRef} className="flex h-screen w-screen justify-center items-center">
                   
                 <InputGroup1 
-                values={values}
-                errors={errors} touched={touched} 
                 isNext1={isNext1} setIsNext1={setIsNext1} 
                 isNext2={isNext2} setIsNext2={setIsNext2}
                 />
                 <InputGroup2 
-                errors={errors} 
-                touched={touched} 
                 IsNext2={isNext2} 
                 setIsNext2={setIsNext2}
                 isNext3={isNext3} setIsNext3={setIsNext3}
                 />
                 <InputGroup3 
-                errors={errors} 
-                touched={touched}
                 IsNext3={isNext3} setIsNext3={setIsNext3} 
                  />
                 
             </Form>
-            )}
           </Formik>
           </main>
   )

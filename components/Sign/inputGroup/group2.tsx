@@ -1,16 +1,16 @@
 import { FormikErrors,FormikTouched,Field } from "formik";
 import { FormValues } from "../../../app/lib/definition";
 import { useState, useEffect } from "react";
+import { useFormikContext } from "formik";
 
 
 
-
-export default function InputGroup2({errors, touched, IsNext2, setIsNext2,isNext3, setIsNext3 }: 
-    {errors: FormikErrors<FormValues>, touched: FormikTouched<FormValues>, 
+export default function InputGroup2({IsNext2, setIsNext2,isNext3, setIsNext3 }: 
+    {
         IsNext2: boolean, setIsNext2: React.Dispatch<React.SetStateAction<boolean>>,
         isNext3: boolean, setIsNext3: React.Dispatch<React.SetStateAction<boolean>>
     }) {
-
+      const { errors, touched, values } = useFormikContext<FormValues>();
         const [isValid, setIsValid] = useState(false);
         useEffect(() => {
             if (!(errors.confirm)) {

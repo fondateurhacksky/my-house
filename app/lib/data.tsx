@@ -22,3 +22,41 @@ export async function getUser(email?: string | undefined, number? : string | und
       throw new Error('Failed to fetch user.');
     }
   }
+
+  export const communeOptions = [
+    { label: 'Abobo', value: 'Abobo' },
+    { label: 'Adjamé', value: 'Adjamé' },
+    { label: 'Cocody', value: 'Cocody' },
+    { label: 'Yopougon', value: 'Yopougon' },
+    { label: 'Marcory', value: 'Marcory' },
+    { label: 'Treichville', value: 'Treichville' },
+    { label: 'Plateau', value: 'Plateau' },
+    { label: 'Koumassi', value: 'Koumassi' },
+    { label: 'Atécoubé', value: 'Atécoubé' },  
+  ];
+  export const servicesOptions = [
+    {
+      label: 'Services liés à la maison',
+      options: [
+        { label: 'Service de ménage', value: 'menage' },
+        { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
+        { label: 'Aide à domicile', value: 'aide_domicile' },
+        { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
+        { label: 'Jardinier/Jardinière', value: 'jardinier' },
+      ],
+    },
+    {
+      label: 'Services résidentiels',
+      options: [
+        { label: 'Chauffeur', value: 'chauffeur' },
+        { label: 'Personnel de sécurité', value: 'securite' },
+      ],
+    },
+    {
+      label: 'Autres services',
+      options: [
+        { label: 'Service d\'autel', value: 'autel' },
+        // Ajoutez d'autres services ici...
+      ],
+    },
+  ];

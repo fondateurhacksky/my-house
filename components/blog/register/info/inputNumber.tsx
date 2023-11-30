@@ -14,9 +14,10 @@ const NumberInput: React.FC<NumberInputFieldProps> = ({ value, name, type }) => 
       {...field}
       type={type}
       country="CI"
-      className="pl-2 w-11/12 bg-white border-2 border-slate-150 rounded focus:outline-none focus:border-blue-500 py-2 px-2 "
+      className="pl-2 w-full sm:w-11/12 bg-white border-2 border-slate-150 rounded focus:outline-none focus:border-blue-500 py-2 px-2 valid:border-green-500"
       value={value}
       onChange={handlePhoneChange}
+      required
     />
   );
 };

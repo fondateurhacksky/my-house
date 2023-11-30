@@ -8,14 +8,12 @@ export const initialValuesLog = {
 export const initialValues = {
   nom: '',
   prenom: '',
+  numeroDeTelephone: '',
   dateDeNaissance: '',
   localité: '',
   service:'',
-  numeroDeTelephone: '',
-  dormir: '',
-  typeContrat: '',
-  codeTuteur: '',
-  details: '',
+  dormie: '',
+  contrat: '',
 }
 export const initialValuesSign ={
   nom:'',
@@ -25,14 +23,20 @@ export const initialValuesSign ={
   pwd:'',
   confirmPwd:'',
 }
+
 export const blogSchema = object().shape({
   nom: string().required('Le nom est requis'),
   prenom: string().required('Le prénom est requis'),
   numeroTelephone: string().required('Le numéro de téléphone est requis'),
   dateNaissance: date().required('La date de naissance est requise'),
-  servicesProposes: string().required('Les services proposés sont requis'),
-  localite: string().required('La localité est requise'),
+  localité: string().required('Veillez selectionner votre localité'),
+  service: string().required('Prière de choisir le service que vous offrez'),
+  dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
+  contrat: string().oneOf(['CDD', 'CDDI']).required('Le type de contrat est requis'),
 });
+
+export default blogSchema;
+
 
 export const userSchema = object().shape({
     nom: string().required('Le nom est obligatoire'),

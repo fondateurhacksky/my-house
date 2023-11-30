@@ -1,4 +1,4 @@
-import {Form, Formik, useFormikContext} from 'formik';
+import {Form, Formik} from 'formik';
 import InputSelect from './select';
 import CheckOption from './checked';
 import { blogSchema, initialValues } from '../../../app/lib/utility';
@@ -13,14 +13,11 @@ export default function Forms(){
         initialValues={initialValues}
         validationSchema={blogSchema}
         onSubmit={(values, actions) => {
-          setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             actions.setSubmitting(false);
-          }, 1000);
         }}
       >
-        {({ errors, touched, values}) => (
-        <Form className="flex flex-col h-screen w-screen justify-center items-center">
+        <Form className="flex flex-col h-screen w-screen justify-center items-center ">
                 <Name/>
                 <Adresse/>
                 <InputSelect />
@@ -29,10 +26,10 @@ export default function Forms(){
                 <button 
                 type="submit" 
                 className="bg-blue-500 
-                text-white p-2 rounded w-1/3 hover:bg-blue-800 shadow-2xl">
+                text-white p-2 rounded sm:w-1/3 w-[218px] hover:bg-blue-700 hover:shadow-2xl">
                 S'inscrire
                 </button>
-      </Form>)}
+      </Form>
       </Formik>
     )
 }

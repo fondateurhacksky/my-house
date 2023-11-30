@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Field, useFormikContext } from "formik";
-import { FormikErrors, FormikTouched } from "formik";
 import { FormValues  } from "../../../app/lib/definition";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import clsx from "clsx";
 
-export default function InputGroup3({ errors, touched, IsNext3, setIsNext3 }: 
-    { errors: FormikErrors<FormValues>, touched: FormikTouched<FormValues>,
+export default function InputGroup3({IsNext3, setIsNext3 }: 
+    {
         IsNext3: boolean, setIsNext3: React.Dispatch<React.SetStateAction<boolean>> 
     }) {
+    const { errors, touched, values } = useFormikContext<FormValues>();
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const { pending } = useFormStatus()

@@ -1,19 +1,17 @@
 import { Field } from "formik";
-import { FormikErrors, FormikTouched } from "formik";
 import { FormValues } from "../../../app/lib/definition";
 import { useState, useEffect } from "react";
 import PhoneInputField from "../../../app/ui/inputPhone";
+import { useFormikContext } from "formik";
 
 
-
-export default function InputGroup1({errors, touched, isNext1, setIsNext1, isNext2, setIsNext2, values}:
-   {errors: FormikErrors<FormValues>, touched: FormikTouched<FormValues>,
+export default function InputGroup1({isNext1, setIsNext1, isNext2, setIsNext2}:
+   { 
     isNext1: boolean, setIsNext1: React.Dispatch<React.SetStateAction<boolean>>,
     isNext2: boolean, setIsNext2: React.Dispatch<React.SetStateAction<boolean>>,
-    values: FormValues
   }) {
 
-
+    const { errors, touched, values } = useFormikContext<FormValues>();
         const [isValid, setIsValid] = useState(false);
         const [focusedInputs, setFocusedInputs] = useState({
           nom: false,
