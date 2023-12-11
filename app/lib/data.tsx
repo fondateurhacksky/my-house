@@ -22,6 +22,7 @@ export async function getUser(email?: string | undefined, number? : string | und
       throw new Error('Failed to fetch user.');
     }
   }
+  
 
   export const communeOptions = [
     { label: 'Abobo', value: 'Abobo' },
@@ -35,28 +36,38 @@ export async function getUser(email?: string | undefined, number? : string | und
     { label: 'Atécoubé', value: 'Atécoubé' },  
   ];
   export const servicesOptions = [
-    {
-      label: 'Services liés à la maison',
-      options: [
-        { label: 'Service de ménage', value: 'menage' },
-        { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
-        { label: 'Aide à domicile', value: 'aide_domicile' },
-        { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
-        { label: 'Jardinier/Jardinière', value: 'jardinier' },
-      ],
-    },
-    {
-      label: 'Services résidentiels',
-      options: [
-        { label: 'Chauffeur', value: 'chauffeur' },
-        { label: 'Personnel de sécurité', value: 'securite' },
-      ],
-    },
-    {
-      label: 'Autres services',
-      options: [
-        { label: 'Service d\'autel', value: 'autel' },
-        // Ajoutez d'autres services ici...
-      ],
-    },
-  ];
+    { label: 'Service de ménage', value: 'menage' },
+    { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
+    { label: 'Aide à domicile', value: 'aide_domicile' },
+    { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
+    { label: 'Jardinier/Jardinière', value: 'jardinier' },
+    { label: 'Chauffeur', value: 'chauffeur' },
+    { label: 'Personnel de sécurité', value: 'securite' },
+    { label: 'Service d\'autel', value: 'autel' },
+  ]
+  // export const servicesOptions = [
+  //   {
+  //     label: 'Services liés à la maison',
+  //     options: [
+  //       { label: 'Service de ménage', value: 'menage' },
+  //       { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
+  //       { label: 'Aide à domicile', value: 'aide_domicile' },
+  //       { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
+  //       { label: 'Jardinier/Jardinière', value: 'jardinier' },
+  //     ],
+  //   },
+  //   {
+  //     label: 'Services résidentiels',
+  //     options: [
+  //       { label: 'Chauffeur', value: 'chauffeur' },
+  //       { label: 'Personnel de sécurité', value: 'securite' },
+  //     ],
+  //   },
+  //   {
+  //     label: 'Autres services',
+  //     options: [
+  //       { label: 'Service d\'autel', value: 'autel' },
+  //       // Ajoutez d'autres services ici...
+  //     ],
+  //   },
+  // ];

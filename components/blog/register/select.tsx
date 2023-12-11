@@ -1,6 +1,6 @@
 import Select from 'react-select';
 import { communeOptions, servicesOptions } from '../../../app/lib/data';
-import { useFormikContext } from 'formik';
+import { Field, useFormikContext } from 'formik';
 
 type SelectProps = {
   localité: string;
@@ -15,88 +15,52 @@ export default function InputSelect() {
   };
 
   const handleServiceChange = (selectedOption: any) => {
-    console.log(selectedOption);
     setFieldValue('service', selectedOption.value); // Mettre à jour la valeur de 'service'
   };
 
   return (
     <div className='flex flex-col sm:flex-row justify-around sm:w-1/3'>
       <div className='sm:w-1/2'>
-        <Select
-          className="w-[220px] sm:w-[205px] sm:ml-2 "
-          classNamePrefix="select"
-          placeholder={"Localité"}
-          isSearchable={true}
-          name="localité"
-          onChange={handleLocaliteChange} // Utiliser la fonction de rappel personnalisée
-          onBlur={handleBlur('localité')} // Gérer l'événement onBlur pour 'localité'
-          options={communeOptions}
-          styles={{
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              borderWidth:2,
-              borderColor: state.isFocused ? '#22c55e' : '#e2e8f0',
-              padding:3,
-            }),
-            placeholder: (base) => ({
-              ...base,
-              fontSize: '1em',
-              color: 'grey',
-              fontWeight: 400,
-            }),
-          }}
-          theme={(theme) => ({
-            ...theme,
-            borderRadius: 5,
-            borderWidth:20,
-            colors: {
-              ...theme.colors,
-              primary25: 'hotpink',
-              primary: '#3498db',
-            },
-          })}
-          required
-        />
+       <Field 
+       required
+       as="select" 
+       name="localité" 
+       className="w-full sm:w-11/12 appearance-none border-2 border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2 valid:border-green-500 rounded">
+        <option value="" disabled hidden>Choisissez une localité</option>
+        {communeOptions.map((option) => (
+          <option
+            key={option.value}
+            value={option.value}
+            className="py-2 px-4 text-gray-800 hover:bg-gray-200"
+
+          >
+            {option.label}
+          </option>
+        ))}
+       </Field>
         <span className="block h-6 w-full text-red-700 text-xs pl-3">
           {touched.localité && errors.localité ? errors.localité : ' '}
         </span>
       </div>
 
       <div className='sm:w-1/2'>
-        <Select
-          className="basic-single w-[220px] sm:w-[204px] ml-1"
-          classNamePrefix="select"
-          placeholder={"Service proposé"}
-          isSearchable={true}
-          name="service"
-          onChange={handleServiceChange} 
-          onBlur={handleBlur('service')} 
-          options={servicesOptions}
-          styles={{
-            control: (baseStyles, state) => ({
-              ...baseStyles,
-              borderWidth:2,
-              borderColor: state.isFocused ? '#22c55e' : '#e2e8f0',
-              padding:3,
-            }),
-            placeholder: (base) => ({
-              ...base,
-              fontSize: '1em',
-              color: 'grey',
-              fontWeight: 400,
-            }),
-          }}
-          theme={(theme) => ({
-            ...theme,
-            borderRadius: 5,
-            colors: {
-              ...theme.colors,
-              primary25: 'hotpink',
-              primary: '#3498db',
-            },
-          })}
-          required
-        />
+      <Field 
+       required
+       as="select" 
+       name="localité" 
+       className="w-full sm:w-11/12 appearance-none border-2 border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2 valid:border-green-500 rounded">
+        <option value="" disabled hidden>Service proposé</option>
+        {servicesOptions.map((option) => (
+          <option
+            key={option.value}
+            value={option.value}
+            className="py-2 px-4 text-gray-800 hover:bg-gray-200"
+
+          >
+            {option.label}
+          </option>
+        ))}
+       </Field>
          <span className="block h-6  text-red-700 text-xs">
           {touched.service && errors.service ? errors.service : ' '}
         </span>

@@ -10,7 +10,6 @@ export default function UserProfil() {
     return <div>Loading...</div>;
   }
 
-  // Si l'utilisateur est connecté, affichez ses informations
   if (session?.user) {
     const { name, image } = session.user;
 

@@ -5,7 +5,6 @@ export interface PhoneInputFieldProps {
     handleFocus: (fieldName: string) => void | null;
   }
   export interface NumberInputFieldProps {
-    value: string;
     name: string;
     type: string;
   }

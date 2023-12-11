@@ -8,13 +8,24 @@ export const initialValuesLog = {
 export const initialValues = {
   nom: '',
   prenom: '',
-  numeroDeTelephone: '',
-  dateDeNaissance: '',
+  tel: '',
+  dateNaissance: '',
   localité: '',
   service:'',
-  dormie: '',
-  contrat: '',
+  // dormie: '',
+  // contrat: '',
 }
+export const blogSchema = object().shape({
+  nom: string().required('Le nom est requis'),
+  prenom: string().required('Le prénom est requis'),
+  tel: string().required('Le numéro de téléphone est requis'),
+  dateNaissance: date().required('La date de naissance est requise'),
+  localité: string().required('Veillez selectionner votre localité'),
+  service: string().required('Prière de choisir le service que vous offrez'),
+  // dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
+  // contrat: string().oneOf(['CDD', 'CDDI']).required('Le type de contrat est requis'),
+});
+
 export const initialValuesSign ={
   nom:'',
   prenom:'',
@@ -24,16 +35,6 @@ export const initialValuesSign ={
   confirmPwd:'',
 }
 
-export const blogSchema = object().shape({
-  nom: string().required('Le nom est requis'),
-  prenom: string().required('Le prénom est requis'),
-  numeroTelephone: string().required('Le numéro de téléphone est requis'),
-  dateNaissance: date().required('La date de naissance est requise'),
-  localité: string().required('Veillez selectionner votre localité'),
-  service: string().required('Prière de choisir le service que vous offrez'),
-  dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
-  contrat: string().oneOf(['CDD', 'CDDI']).required('Le type de contrat est requis'),
-});
 
 export default blogSchema;
 

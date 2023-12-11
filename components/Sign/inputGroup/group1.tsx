@@ -12,6 +12,7 @@ export default function InputGroup1({isNext1, setIsNext1, isNext2, setIsNext2}:
   }) {
 
     const { errors, touched, values } = useFormikContext<FormValues>();
+    
         const [isValid, setIsValid] = useState(false);
         const [focusedInputs, setFocusedInputs] = useState({
           nom: false,
@@ -48,44 +49,44 @@ export default function InputGroup1({isNext1, setIsNext1, isNext2, setIsNext2}:
         ${isNext1 ? 'opacity-100 visible transition-opacity ease-in-out duration-500' : ' opacity-0 invisible'}
         `} >
 
-                    <Field 
-                    type="text" 
-                    name="nom" 
-                    id="nom" 
-                    placeholder="Nom" 
-                    className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
-                    onFocus={() => handleFocus("nom")}
-                    />
-                    <span className="block h-8 w-full text-red-700 text-xs">{touched.nom && errors.nom ? errors.nom : ' '}</span>
+        <Field 
+        type="text" 
+        name="nom" 
+        id="nom" 
+        placeholder="Nom" 
+        className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
+        onFocus={() => handleFocus("nom")}
+        />
+        <span className="block h-8 w-full text-red-700 text-xs">{touched.nom && errors.nom ? errors.nom : ' '}</span>
 
-                    <Field 
-                    type="text" 
-                    name="prenom" 
-                    id="prenom" 
-                    placeholder="Prenom" 
-                    className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
-                    onFocus={() => handleFocus("prenom")}
-                    />
-                    <span className=" bg-inherit block h-8  w-full text-red-700  text-xs">{touched.prenom && errors.prenom ? errors.prenom : ' '}</span>
+        <Field 
+        type="text" 
+        name="prenom" 
+        id="prenom" 
+        placeholder="Prenom" 
+        className=" bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10 "
+        onFocus={() => handleFocus("prenom")}
+        />
+        <span className=" bg-inherit block h-8  w-full text-red-700  text-xs">{touched.prenom && errors.prenom ? errors.prenom : ' '}</span>
 
-                     <PhoneInputField
-                     name="tel"
-                     type="text"
-                     value={values.tel}
-                     handleFocus={handleFocus}
-                      />
+        <PhoneInputField
+        name="tel"
+        type="text"
+        value={values.tel}
+        handleFocus={handleFocus}
+         />
 
-                    <span className="block h-8  w-full text-red-700 text-xs">{touched.tel && errors.tel ? errors.tel : ''}</span>
+        <span className="block h-8  w-full text-red-700 text-xs">{touched.tel && errors.tel ? errors.tel : ''}</span>
 
-                    <button 
-                        className={`w-full sm:w-full text-slate-50 p-2 hover:shadow-xl my-5 
-                        ${isValid ? 'opacity-100 bg-blue-700 cursor-default	' : 'opacity-75 bg-slate-500 cursor-not-allowed	'}`} 
-                        type="button"
-                        onClick={handlerClick}
-                    >
-                      Etape suivante
-                     </button>
-                </div>
+        <button 
+            className={`w-full sm:w-full text-slate-50 p-2 hover:shadow-xl my-5 
+            ${isValid ? 'opacity-100 bg-blue-700 cursor-default	' : 'opacity-75 bg-slate-500 cursor-not-allowed	'}`} 
+            type="button"
+            onClick={handlerClick}
+        >
+          Etape suivante
+         </button>
+    </div>
     )
 
 }

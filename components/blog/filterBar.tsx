@@ -2,8 +2,6 @@
 import { useState } from "react";
 import Select from 'react-select';
 import { ageOptions, genderOptions, religionOptions} from '../../app/lib/place-holder-data';
-import { VscPersonAdd } from 'react-icons/vsc';
-import Filter from "../Navbar/filter";
 import { clsx }  from 'clsx'
 import { usePathname } from 'next/navigation'
 import { useContext } from "react";

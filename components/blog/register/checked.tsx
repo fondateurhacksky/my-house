@@ -2,8 +2,10 @@ import { Field } from 'formik';
 
 export default function CheckOption() {
   return (
-    <div className="w-[218px] flex flex-col sm:flex-row sm:w-1/3 justify-center items-center border-2 border-gray-300 p-4 rounded-md mb-4 bg-white">
-      <div className="sm:pr-6 sm:w-1/2"> {/* Utilisation de classes pour définir la largeur des éléments sur les grands écrans */}
+    <div className="w-[218px] flex flex-col sm:flex-row sm:w-1/3  justify-center items-center border-2 border-gray-200 rounded-md py-2 mb-4 bg-white mr-4">
+
+      <div className=""> 
+      
         <label className="block  mb-2">Possibilité de dormir ? :</label>
 
         <div className="flex items-center justify-center space-x-6">
@@ -19,9 +21,11 @@ export default function CheckOption() {
         </div>
     </div>
 
-      <div className="sm:pl-6 my-4 sm:border-l-2 border-gray-300 sm:w-1/2"> 
+      <div className='mx-4 w-0.5 rounded h-full bg-gray-300'></div>
 
-        <label className="block  mb-2">Type de contrat :</label>
+      <div className=""> 
+
+        <label className="block mb-2">Type de contrat :</label>
 
         <div className="flex items-center space-x-6">
           <label className="flex items-center">
@@ -35,6 +39,7 @@ export default function CheckOption() {
           </label>
         </div>
       </div>
+
     </div>
   );
 }

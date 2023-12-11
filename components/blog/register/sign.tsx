@@ -1,8 +1,8 @@
 'use client'
-import { Formik} from 'formik';
+import { Formik } from 'formik';
 import { blogSchema, initialValues } from '../../../app/lib/utility';
 import NavBar from '../../../app/ui/NavBar';
-import Forms from './form';
+import Form from './form';
 
 export default function RegistrationForm(){
   
@@ -14,14 +14,11 @@ export default function RegistrationForm(){
         initialValues={initialValues}
         validationSchema={blogSchema}
         onSubmit={(values, actions) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-            }, 1000);
-            console.log(values);
+          console.log(values);
+          actions.setSubmitting(false);
           }}
       >
-       <Forms />
+       <Form />
       </Formik>
       </main>
   );
