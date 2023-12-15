@@ -10,7 +10,7 @@ export default function Adresse(){
     const { touched, errors, values } = useFormikContext<errors>();
 
     return(
-        <div className='flex sm:flex-row flex-col sm:w-1/3 justify-center items-center'>
+        <div className='flex sm:flex-row flex-col sm:max-lg:w-1/2 lg:w-1/3 justify-center items-center'>
 
             <div className="sm:w-1/2 w-[218px] ">
                 <label className="pl-1s block text-gray-700  text-sm"
@@ -29,7 +29,7 @@ export default function Adresse(){
                     type="date"
                     name="dateNaissance"
                     id="dateNaissance"
-                    className="w-full sm:w-11/12 py-2 px-2 border-2 border-slate-150 rounded focus:outline-none focus:border-blue-500 valid:border-green-500 text-slate-500"
+                    className="w-full sm:w-11/12 py-2 px-2 border-2 border-slate-150 rounded focus:outline-none focus:border-blue-500 valid:border-green-500"
                     required
                     /> 
                 </div>

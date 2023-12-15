@@ -1,17 +1,19 @@
 import {Form as Forms} from 'formik';
 import InputSelect from './select';
+import InputSelect2 from './selectTow';
 import CheckOption from './checked';
-import Name from './info/name';
-import Adresse from './info/adresse';
+import Name from '../info/name';
+import Adresse from '../info/adresse';
 
 
 export default function Form(){
 
     return(
-        <Forms className="flex flex-col h-screen w-screen justify-center items-center ">
+        <Forms className="flex flex-col h-screen w-screen justify-center items-center">
                 <Name/>
                 <Adresse/>
                 <InputSelect />
+                <InputSelect2 />
                 <CheckOption />
                 
                 <button 

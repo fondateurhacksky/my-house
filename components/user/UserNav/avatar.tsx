@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Avatar({src} : {src:string}) {
   return (
     <div>
-      <img 
+      <Image 
       src={src} 
       width={100}
       height={100}

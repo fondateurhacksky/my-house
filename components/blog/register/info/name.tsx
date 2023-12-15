@@ -12,7 +12,7 @@ export default function Name(){
     const { touched, errors } = useFormikContext<FormHelpers>();
     
     return(
-         <div className='flex flex-col sm:flex-row sm:w-1/3'>
+         <div className='flex flex-col sm:flex-row sm:max-lg:w-1/2 lg:w-1/3'>
 
             <div className="sm:w-1/2">
                     <Field 

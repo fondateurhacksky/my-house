@@ -1,7 +1,7 @@
 'use client'
 import { Formik } from 'formik';
-import { blogSchema, initialValues } from '../../../app/lib/utility';
-import NavBar from '../../../app/ui/NavBar';
+import { blogSchema, initialValues } from '../../../../app/lib/utility';
+import NavBar from '../../../../app/ui/NavBar';
 import Form from './form';
 
 export default function RegistrationForm(){
@@ -20,6 +20,6 @@ export default function RegistrationForm(){
       >
        <Form />
       </Formik>
-      </main>
+    </main>
   );
 };

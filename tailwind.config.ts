@@ -29,6 +29,11 @@ const config: Config = {
       colors: {
         tcolor: "#222",
       },
+      width: {
+        '30x': '32%',
+        '48x': '48%',
+        '35x': '35%',
+      },
       gridAutoRows: {
         '2fr': 'minmax(0, 2fr)',
       },

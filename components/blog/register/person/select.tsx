@@ -1,5 +1,4 @@
-import Select from 'react-select';
-import { communeOptions, servicesOptions } from '../../../app/lib/data';
+import { communeOptions, servicesOptions } from '../../../../app/lib/data';
 import { Field, useFormikContext } from 'formik';
 
 type SelectProps = {
@@ -8,30 +7,29 @@ type SelectProps = {
 };
 
 export default function InputSelect() {
-  const { setFieldValue, handleBlur, errors, touched } = useFormikContext<SelectProps>();
-
-  const handleLocaliteChange = (selectedOption: any) => {
-    setFieldValue('localité', selectedOption.value); // Mettre à jour la valeur de 'localité'
-  };
-
-  const handleServiceChange = (selectedOption: any) => {
-    setFieldValue('service', selectedOption.value); // Mettre à jour la valeur de 'service'
-  };
+  const {errors, touched } = useFormikContext<SelectProps>();
 
   return (
-    <div className='flex flex-col sm:flex-row justify-around sm:w-1/3'>
+    <div className='flex flex-col sm:flex-row justify-around sm:max-lg:w-1/2 lg:w-1/3'>
       <div className='sm:w-1/2'>
        <Field 
        required
        as="select" 
        name="localité" 
-       className="w-full sm:w-11/12 appearance-none border-2 border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2 valid:border-green-500 rounded">
-        <option value="" disabled hidden>Choisissez une localité</option>
+       className="w-full sm:w-11/12  border-2 border-slate-150 focus:outline-none focus:border-blue-500  p-2 valid:border-green-500 rounded">
+
+        <option 
+        value="" 
+        disabled hidden
+        className="text-slate-800"
+        >
+          Choisissez une localité
+          </option>
         {communeOptions.map((option) => (
           <option
             key={option.value}
             value={option.value}
-            className="py-2 px-4 text-gray-800 hover:bg-gray-200"
+            className="p-2 px-4 text-gray-800 hover:bg-gray-200"
 
           >
             {option.label}
@@ -47,14 +45,14 @@ export default function InputSelect() {
       <Field 
        required
        as="select" 
-       name="localité" 
-       className="w-full sm:w-11/12 appearance-none border-2 border-slate-150 focus:outline-none focus:border-blue-500 px-4 py-2 valid:border-green-500 rounded">
+       name="service" 
+       className="w-full sm:w-11/12  border-2 border-slate-150 focus:outline-none focus:border-blue-500 p-2 valid:border-green-500 rounded">
         <option value="" disabled hidden>Service proposé</option>
         {servicesOptions.map((option) => (
           <option
             key={option.value}
             value={option.value}
-            className="py-2 px-4 text-gray-800 hover:bg-gray-200"
+            className="p-2 px-4 text-gray-800 hover:bg-gray-200"
 
           >
             {option.label}
@@ -65,6 +63,7 @@ export default function InputSelect() {
           {touched.service && errors.service ? errors.service : ' '}
         </span>
       </div>
+      
     </div>
   );
 }

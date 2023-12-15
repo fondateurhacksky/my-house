@@ -18,7 +18,7 @@ export default function UserProfil() {
         onClick={handlerClick}
         className="flex justify-center items-center">
         {image ? 
-            (<img 
+            (<Image 
             src={image}
             width={40}
             height={40}

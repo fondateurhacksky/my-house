@@ -12,8 +12,9 @@ export const initialValues = {
   dateNaissance: '',
   localité: '',
   service:'',
-  // dormie: '',
-  // contrat: '',
+  paiement: '',
+  prix: '',
+  dormie: '',
 }
 export const blogSchema = object().shape({
   nom: string().required('Le nom est requis'),
@@ -22,8 +23,19 @@ export const blogSchema = object().shape({
   dateNaissance: date().required('La date de naissance est requise'),
   localité: string().required('Veillez selectionner votre localité'),
   service: string().required('Prière de choisir le service que vous offrez'),
-  // dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
-  // contrat: string().oneOf(['CDD', 'CDDI']).required('Le type de contrat est requis'),
+  paiement: string()
+    .oneOf(['À la tâche', 'Par jour', 'Par semaine', 'Par mois', 'Autre'])
+    .required('Le mode de paiement est requis'),
+  prix: string()
+    .oneOf([
+      '0-50000',
+      '50001-100000',
+      '100001-150000',
+      '150001-200000',
+      '200001-250000',
+    ])
+    .required('La tranche de prix est requise'),  
+  dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
 });
 
 export const initialValuesSign ={
