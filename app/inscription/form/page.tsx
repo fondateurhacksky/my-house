@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HomeSigne from '../../components/Sign/homeSign';
+import SignupForm from '../../../components/Sign/sign'
  
 export const metadata: Metadata = {
   title: 'Inscription',
@@ -7,6 +7,5 @@ export const metadata: Metadata = {
 
 export default function Login() {
   
-    return <HomeSigne />;
-
+    return <SignupForm/>
 }

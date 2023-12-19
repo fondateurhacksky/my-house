@@ -12,14 +12,14 @@ export default function AccountPage() {
 
   
     return (
-        <div className='hidden sm:flex mx-3'>
+        <div className='hidden sm:flex'>
 
       
       {session?.user ? (<UserProfil />) : (
         
 
        logs.map((log) => (
-          <button key={log.id} className={` text-slate-50 bg-slate-800 shadow-md rounded md:text-base font-bold px-2 py-1 md:p-2 my-2 last:mx-2 w-28`}>
+          <button key={log.id} className={`text-slate-50 bg-slate-700 shadow-md rounded md:text-base font-semibold my-3 last:mx-2 w-24 hover:bg-slate-800`}>
             <Link href={log.slug}>{log.title}</Link>
           </button>
       )) 

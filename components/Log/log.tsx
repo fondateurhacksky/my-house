@@ -7,8 +7,8 @@ import NavBar from '../../app/ui/NavBar';
 import InputG1 from './InputGp/group1';
 import InputG2 from './InputGp/groupe2';
 import LogBtn from './logBtn';
-import FacebookProvider from './InputGp/facebook';
-import GoogleProvider from './InputGp/google';
+import FacebookProvider from '../../app/ui/facebook';
+import GoogleProvider from '../../app/ui/google';
 
 export default function LoginForm(){
 
@@ -54,8 +54,8 @@ export default function LoginForm(){
         </div>
 
       <div className=" flex flex-col justify-around	 w-80">
-        <FacebookProvider/>
-        <GoogleProvider/>
+        <FacebookProvider text={"Se connecter avec "}/>
+        <GoogleProvider text={"Se connecter avec "}/>
       </div>
       </div>
     </main>

@@ -13,8 +13,8 @@ export default function Form(){
                 <Name/>
                 <Adresse/>
                 <InputSelect />
-                <InputSelect2 />
-                <CheckOption />
+                {/* <InputSelect2 /> */}
+                {/* <CheckOption /> */}
                 
                 <button 
                 type="submit" 
