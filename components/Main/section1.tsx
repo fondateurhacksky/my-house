@@ -1,52 +1,42 @@
 'use client'
-import React, { useState, useEffect } from "react";
 import VoireAn from './button/voirAn';
 import Text from "./text";
 import { clsx } from 'clsx';
 
 export default function Section1() {
-  const [isSectionVisible, setSectionVisible] = useState(true);
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 200) {
-      setSectionVisible(false); // Cacher la section
-    } else {
-      setSectionVisible(true); // Afficher la section
-    }
-
-  };
-
-  // Écoute des événements de défilement lors du montage du composant
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    window.scrollTo(0, 0);
-    return () => {
-      // Nettoyer l'écouteur d'événements lorsque le composant est démonté
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <section
-      className={clsx(`flex flex-col md:flex-row justify-center	md:justify-evenly items-center bg-white border-slate-700 h-screen w-screen`,
-        isSectionVisible && "opacity-100 transition-opacity duration-500", 
-        "opacity-0 transition-opacity duration-500"
-      )}
+      className={clsx(`grid grid-rows-3 border-slate-700 w-screen`)}
     >
-      <div className="flex flex-col justify-center items-center mb-5">
-        <Text />
-        <VoireAn />
-      </div>
+      <div className="row-span-2 py-4 flex flex-col md:flex-row justify-center	md:justify-evenly items-center">
+
+        <div className="flex flex-col justify-center items-center">
+          <Text />
+          <VoireAn />
+        </div>
 
         <iframe
-          className="lg:w-[400px] lg:h-[330px] w-[300px] h-[250px] mt-5"
-          src="https://www.youtube.com/embed/mo5PExrurGY?si=GER8ZI5lplDHf9-u"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
+            className="lg:w-[400px] lg:h-[330px] w-[300px] h-[250px] mt-5"
+            src="https://www.youtube.com/embed/mo5PExrurGY?si=GER8ZI5lplDHf9-u"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
         ></iframe>
+
+      </div>
+
+      <footer className="row-span-3 bg-slate-50 border-t border-slate-500 w-full">
+
+        <ul className="m-4 flex-col h-36 justify-around inline-flex text-slate-800">
+            <li className="hover:underline"><a href="/a-propos">À propos de nous</a></li>
+            <li className="hover:underline"><a href="/pourquoi-nous">Pourquoi nous</a></li>
+            <li className="hover:underline"><a href="/comment-nous-fonctionnons">Comment nous fonctionnons</a></li>
+            <li className="hover:underline"><a href="/nos-contacts">Nos contacts</a></li>
+        </ul>
+
+      </footer>
+
     </section>
   );
 }

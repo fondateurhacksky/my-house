@@ -9,12 +9,12 @@ import Adresse from '../info/adresse';
 export default function Form(){
 
     return(
-        <Forms className="flex flex-col h-screen w-screen justify-center items-center">
+        <Forms className="my-16 py-2 flex flex-col w-screen justify-center items-center">
                 <Name/>
                 <Adresse/>
                 <InputSelect />
-                {/* <InputSelect2 /> */}
-                {/* <CheckOption /> */}
+                <InputSelect2 />
+                <CheckOption />
                 
                 <button 
                 type="submit" 

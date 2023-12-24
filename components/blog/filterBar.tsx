@@ -22,7 +22,7 @@ export default function FilterBar(){
 
     return(
         <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center left-52 top-20 h-auto`,filter,
-     !(pathname === '/blog/annonces') && 'hidden'
+     !(pathname === '/blog/annonces/personnelles') && 'hidden'
         )}> 
         <div>
              <Select 

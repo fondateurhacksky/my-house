@@ -8,7 +8,7 @@ export default function RegistrationForm(){
   
 
   return (
-    <main>
+    <>
       <NavBar/>
       <Formik
         initialValues={initialValues}
@@ -20,6 +20,6 @@ export default function RegistrationForm(){
       >
        <Form />
       </Formik>
-    </main>
+    </>
   );
 };

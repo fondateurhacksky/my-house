@@ -11,30 +11,25 @@
   return (
     <button
     onClick={() => setState(filter === 'visible' ? 'invisible' : 'visible')}
-    className={clsx('flex items-center	bg-slate-600 px-2 w-auto  rounded cursor-pointer	font-bold ml-3',
-     pathname === '/blog/annonces' && '',
-     !(pathname === '/blog/annonces') && 'hidden'
+    className={clsx('flex items-center	bg-black px-2 w-auto  rounded cursor-pointer	font-bold ml-3',
+     pathname === '/blog/annonces/personnelles' && '',
+     !(pathname === '/blog/annonces/personnelles') && 'hidden'
      )}>
 
       <div>
 
-      <div className='w-8 h-0.5 rounded-full bg-white mb-1 relative'>
+          <div className='w-8 h-0.5 rounded-full bg-white mb-1 relative'>
 
-        <div className='bg-black absolute border-2 border-white rounded-full top-[-3px] left-1 p-0.5 '></div>
+            <div className='bg-black absolute border-2 border-white rounded-full top-[-3px] left-1 p-0.5 '></div>
 
-      </div>
+          </div>
 
-      <div className='w-8 h-0.5 bg-white my-1.5 rounded-full relative'>
+          <div className='w-8 h-0.5 bg-white  rounded-full relative'>
 
-      <div className='bg-black absolute border-2 border-white rounded-full top-[-3px] left-5 p-0.5 '></div>
+          <div className='bg-black absolute border-2 border-white rounded-full top-[-3px] left-5 p-0.5 '></div>
 
-      </div>
+          </div>
 
-      <div className='w-8 h-0.5 bg-white mt-1 rounded-full relative'>
-
-      <div className='bg-black absolute border-2 border-white rounded-full top-[-4px] left-1 p-0.5 '></div>
-
-      </div>
           
       </div>
 

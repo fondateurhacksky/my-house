@@ -4,10 +4,9 @@ import NavBar from "./ui/NavBar";
 
 export default function Home() {
   return (
-    <main className="h-screen	">
+    <main className="h-screen">
       <NavBar />
       <Section1 />
-      <Section2 />
     </main>
   );
 }

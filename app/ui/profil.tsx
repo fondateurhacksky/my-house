@@ -22,7 +22,7 @@ export default function UserProfil() {
             src={image}
             width={40}
             height={40}
-            className="rounded-full"
+            className="rounded-full mr-2"
             alt="Photo de profil"/>) : <ProfilText name={name}/> }
 
         </button>
