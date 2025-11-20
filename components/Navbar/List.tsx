@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { posts } from "../../app/lib/utility";
+import { Lists } from "../../app/lib/utility";
 import { clsx } from 'clsx'
 import { usePathname } from 'next/navigation';
 
@@ -13,7 +13,7 @@ export default function List({ horiVisible }: { horiVisible: boolean }) {
           )}
           
           >
-            {posts.map((post) => (
+            {Lists.map((post) => (
               <li
                 key={post.id}
                 className={clsx(`last:border-b-2  first:border-t-2 border-slate-50 sm:first:border-t-2 sm:flex-1 w-full sm:w-[135px]`, pathname === post.slug && 'sm:bg-slate-200 bg-white text-black ', `hover:bg-slate-200 text-center sm:rounded py-1 sm:py-2 sm:border-2 sm:border-slate-500 cursor-pointer ${post.display}`)}

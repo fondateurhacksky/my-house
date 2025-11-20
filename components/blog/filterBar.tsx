@@ -16,13 +16,11 @@ export default function FilterBar(){
   const [gender, setGender] = useState('all');
   const [salary, setsalary] = useState('all');
   const [searchBar, setSearchBar] = useState(false);
-  const pathname = usePathname();
   const filter = useContext(FilterContext);
 
 
     return(
-        <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center left-52 top-20 h-auto`,filter,
-     !(pathname === '/blog/annonces/personnelles') && 'hidden'
+        <div className={clsx(`absolute shadow-lg flex flex-wrap shadow-slate-500/40 bg-[#ffffff] border-r border-slate-300 justify-center left-52 top-20 h-auto`,filter
         )}> 
         <div>
              <Select 
