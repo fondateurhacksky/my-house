@@ -1,23 +1,26 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import { auth } from "../auth";
 import { SessionProvider } from "next-auth/react"
 
-const inter = Roboto({ 
+const inter = Inter({
   subsets: ['latin'],
-  weight: '400'
- })
+  variable: '--font-inter',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400','500','600','700'],
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: 'MyHouse',
   description: 'Site de placement de personnelle et de biens',
-  icons: 'https://w7.pngwing.com/pngs/907/970/png-transparent-white-house-logo-computer-icons-home-house-home-blue-angle-text.png'
 }
 
-export default async function RootLayout({
-  children,
-}: {
+export default async function RootLayout({ children }:{
   children: React.ReactNode
 }) {
 
@@ -31,11 +34,12 @@ export default async function RootLayout({
       image: session.user.image,
     };
   }
+
   return (
-    <html lang="fr">
-      <body className={inter.className}>
+    <html lang="fr" className={`${inter.variable} ${poppins.variable}`}>
+      <body className="font-sans">
         <SessionProvider session={session}>
-            {children}
+          {children}
         </SessionProvider>
       </body>
     </html>

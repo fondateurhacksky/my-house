@@ -5,7 +5,7 @@ import Text from "./text";
 export default function MainSection() {
 
   return (
-    <section className="flex flex-1 overflow-auto row-span-2 flex-col md:flex-row justify-center	md:justify-evenly items-center mt-10"
+    <section className="flex flex-1 overflow-auto row-span-2 flex-col md:flex-row justify-center	md:justify-evenly items-center my-10"
     >
 
         <div className="flex flex-col justify-center items-center ">

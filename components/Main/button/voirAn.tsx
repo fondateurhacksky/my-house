@@ -26,7 +26,7 @@ export default function VoirAn({}) {
         <div>
             <button
                 onClick={handlerClick}
-                className={clsx("w-full text-xl font-medium hover:bg-green-500 rounded-t-lg p-2 border-2 border-orange-500 text-slate-950 hover:text-slate-50 md:text-base font-bold px-3 py-3 md:p-3 mt-3 mr-3",
+                className={clsx("duration-500 w-full text-xl font-medium hover:bg-slate-700 rounded-t-lg p-2 border-2 border-slate-700 text-slate-950 hover:text-white md:text-base font-bold px-3 py-3 md:p-3 mt-3 mr-3",
                 showDiv && 'rounded-lg'
                 )}
             >
