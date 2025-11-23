@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Field, useFormikContext } from "formik";
-import { FormValues  } from "../../../app/lib/definition";
+import { FormValues  } from "../../../lib/definition";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useEffect } from "react";
 import { useFormStatus } from "react-dom";

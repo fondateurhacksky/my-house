@@ -1,11 +1,11 @@
 'use client'
 import { useState } from "react";
 import Select from 'react-select';
-import { ageOptions, genderOptions, religionOptions} from '../../app/lib/place-holder-data';
+import { ageOptions, genderOptions, religionOptions} from '../../lib/place-holder-data';
 import { clsx }  from 'clsx'
 import { usePathname } from 'next/navigation'
 import { useContext } from "react";
-import { FilterContext } from '../../app/lib/context'
+import { FilterContext } from '../../lib/context'
 
 
 

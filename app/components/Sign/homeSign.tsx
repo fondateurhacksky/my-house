@@ -1,7 +1,7 @@
 'use client'
-import NavBar from "../../app/ui/NavBar";
-import FacebookProvider from "../../app/ui/facebook";
-import GoogleProvider from "../../app/ui/google";
+import NavBar from "../../ui/NavBar";
+import FacebookProvider from "../../ui/facebook";
+import GoogleProvider from "../../ui/google";
 import { useRouter } from 'next/navigation'
 
 export default function HomeSigne() {

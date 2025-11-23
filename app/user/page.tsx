@@ -1,4 +1,4 @@
-import NavUser from "../../components/user/UserNav/navbar"
+import NavUser from "../components/user/UserNav/navbar"
 
 
 export default function Home(){

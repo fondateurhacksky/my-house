@@ -1,12 +1,12 @@
-import { salaryOptions, paymentOptions } from '../../../../app/lib/data';
+import { communeOptions, servicesOptions } from '../../../../lib/data';
 import { Field, useFormikContext } from 'formik';
 
 type SelectProps = {
-  paiement: string;
-  prix: string;
+  localité: string;
+  service: string;
 };
 
-export default function InputSelect2() {
+export default function InputSelect() {
   const {errors, touched } = useFormikContext<SelectProps>();
 
   return (
@@ -15,7 +15,7 @@ export default function InputSelect2() {
        <Field 
        required
        as="select" 
-       name="paiement" 
+       name="localité" 
        className="w-full sm:w-11/12  border-2 border-slate-150 focus:outline-none focus:border-blue-500  p-2 valid:border-green-500 rounded">
 
         <option 
@@ -23,9 +23,9 @@ export default function InputSelect2() {
         disabled hidden
         className="text-slate-800"
         >
-          Mode de paiment voulue
+          Choisissez une localité
           </option>
-        {paymentOptions.map((option) => (
+        {communeOptions.map((option) => (
           <option
             key={option.value}
             value={option.value}
@@ -37,7 +37,7 @@ export default function InputSelect2() {
         ))}
        </Field>
         <span className="block h-6 w-full text-red-700 text-xs pl-3">
-          {touched.paiement && errors.paiement ? errors.paiement : ' '}
+          {touched.localité && errors.localité ? errors.localité : ' '}
         </span>
       </div>
 
@@ -45,10 +45,10 @@ export default function InputSelect2() {
       <Field 
        required
        as="select" 
-       name="prix" 
+       name="service" 
        className="w-full sm:w-11/12  border-2 border-slate-150 focus:outline-none focus:border-blue-500 p-2 valid:border-green-500 rounded">
-        <option value="" disabled hidden>Salaire proposé</option>
-        {salaryOptions.map((option) => (
+        <option value="" disabled hidden>Service proposé</option>
+        {servicesOptions.map((option) => (
           <option
             key={option.value}
             value={option.value}
@@ -60,7 +60,7 @@ export default function InputSelect2() {
         ))}
        </Field>
          <span className="block h-6  text-red-700 text-xs">
-          {touched.prix && errors.prix ? errors.prix : ' '}
+          {touched.service && errors.service ? errors.service : ' '}
         </span>
       </div>
       

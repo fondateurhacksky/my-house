@@ -1,7 +1,7 @@
 import { Field } from "formik";
-import { FormValues } from "../../../app/lib/definition";
+import { FormValues } from "../../../lib/definition";
 import { useState, useEffect } from "react";
-import PhoneInputField from "../../../app/ui/inputPhone";
+import PhoneInputField from "../../../ui/inputPhone";
 import { useFormikContext } from "formik";
 
 

@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from "react";
-import List from "../../components/Navbar/List";
-import Logo from "../../components/Navbar/Logo";
-import HorizontalMenu from "../../components/Navbar/toggle";
-import FilterBar from "../../components/blog/filterBar";
-import { FilterContext } from "../lib/context";
-import AccountPage from "../../components/Navbar/login";
+import List from "@/app/components/Navbar/List";
+import Logo from "@/app/components/Navbar/Logo";
+import HorizontalMenu from "@/app/components/Navbar/toggle";
+import FilterBar from "@/app/components/blog/filterBar";
+import { FilterContext } from "@/app/lib/context";
+import AccountPage from "@/app/components/Navbar/login";
 
 export default function NavBar() {
   const [horiVisible, setHoriVisible] = useState(false);
@@ -25,22 +25,25 @@ export default function NavBar() {
     }
 
   };
-
-
-
   return (
     <nav
-      className={`flex justify-between bg-white shadow-lg border-b border-slate-500 z-50 w-full fixed sticky top-0`}
+      className={`flex justify-between bg-white shadow-lg border-b border-slate-500 z-50 w-full h-[60px]`}
+    //  le navbar contient trois element : le logo, le menu, les bouton login/sign
     >
-       <FilterContext.Provider value={state}>
+        {/* <div className="relative"> */}
+       {/* <FilterContext.Provider value={state}> */}
           <Logo setState={setState} />
-          <FilterBar />
-       </FilterContext.Provider>
+          {/* <FilterBar /> */}
+          {/* placeholder de bare qui devrais servie de flitrage a revoire non seulement pour ca position mais aussi pour le design */}
+       {/* </FilterContext.Provider> */}
+       {/* </div> */}
+
        
       <List horiVisible={horiVisible} />
       <AccountPage />
       
       <HorizontalMenu horiVisible={horiVisible} setHoriVisible={setHoriVisible} />
+      {/* permet de mettre le menu en horizontale pour ecran de petite taille  */}
     </nav>
   );
 }

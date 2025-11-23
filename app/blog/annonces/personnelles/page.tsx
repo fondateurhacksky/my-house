@@ -1,4 +1,4 @@
-import Ad from '../../../../components/blog/ad';
+import Ad from '../../../components/blog/ad';
 import { ads } from '../../../lib/place-holder-data';
 import { Metadata } from 'next';
 import NavBar from '../../../ui/NavBar';

@@ -1,12 +1,12 @@
 'use client'
 import { Formik, Form} from "formik";
-import { userSchema, initialValuesSign } from "../../app/lib/utility";
+import { userSchema, initialValuesSign } from "../../lib/utility";
 import  InputGroup1  from "./inputGroup/group1";
 import  InputGroup2  from "./inputGroup/group2";
 import  InputGroup3  from "./inputGroup/group3";
 import { useState, useRef } from "react";
-import { createTodo } from "../../app/lib/actions";
-import NavBar from "../../app/ui/NavBar";
+import { createTodo } from "../../lib/actions";
+import NavBar from "../../ui/NavBar";
 
 
 export default function SignupForm(){

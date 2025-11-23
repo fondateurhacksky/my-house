@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Lists } from "../../app/lib/utility";
+import { Lists } from "../../lib/utility";
 import { clsx } from 'clsx'
 import { usePathname } from 'next/navigation';
 
@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function List({ horiVisible }: { horiVisible: boolean }) {
         const  pathname  = usePathname();
         return (
-          <ul className={clsx(`transition-all duration-300 absolute sm:static sm:h-auto h-screen text-white sm:text-black z-30 right-0 shadow-2xl sm:shadow-none text-xs sm:text-sm flex flex-col sm:flex-row sm:pt-0 pt-16 items-center font-medium bg-slate-700 sm:bg-white sm:w-auto
+          <ul className={clsx(`absolute sm:static sm:h-auto h-screen text-white sm:text-black z-30 right-0 shadow-2xl sm:shadow-none text-xs sm:text-sm flex flex-col sm:flex-row sm:pt-0 pt-16 items-center font-medium bg-slate-700 sm:bg-white sm:w-auto
           [&>*:not(:first-child)]:border-t-2 sm:[&>*:not(:first-child)]:border-t-2 [&>*:not(:first-child)]:border-slate-50 sm:[&>*:not(:first-child)]:border-slate-500 sm:[&>*:not(:first-child)]:ml-2 w-0`,
           horiVisible && 'w-3/5'
           )}

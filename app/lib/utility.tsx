@@ -73,6 +73,12 @@ export const userSchema = object().shape({
 
 
 export  const Lists = [{'id':1, 'slug':'/', 'title':'Accueil','display' : ''}, {'id':2, 'slug':'/blog/annonces/personnelles', 'title':'Personnelles','display' : ''},{'id':3, 'slug':'/blog/annonces/mobilier', 'title':'Mobilier','display' : ''},{'id':4,'slug':'/connexion', 'title':'Connexion', 'display' : 'sm:hidden'}, {'id':5,'slug':'/inscription', 'title':"S'inscrire", 'display' : 'sm:hidden'}]
+export const footerLinks = [
+  { id: 1, title: "À propos de nous", slug: "/a-propos" },
+  { id: 2, title: "Pourquoi nous", slug: "/pourquoi-nous" },
+  { id: 3, title: "Comment nous fonctionnons", slug: "/comment-nous-fonctionnons" },
+  { id: 4, title: "Nos contacts", slug: "/nos-contacts" },
+];
 
 export const logs = [{'id':1,'slug':'/connexion', 'title':'Connexion'}, {'id':2,'slug':'/inscription', 'title':"S'inscrire"}]
 

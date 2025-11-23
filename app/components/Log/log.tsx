@@ -1,14 +1,14 @@
 'use client'
 import { useRef } from 'react';
 import { Formik, Form} from "formik";
-import { userSchema2, initialValuesLog } from "../../app/lib/utility";
+import { userSchema2, initialValuesLog } from "../../lib/utility";
 import { signIn } from 'next-auth/react';
-import NavBar from '../../app/ui/NavBar';
+import NavBar from '../../ui/NavBar';
 import InputG1 from './InputGp/group1';
 import InputG2 from './InputGp/groupe2';
 import LogBtn from './logBtn';
-import FacebookProvider from '../../app/ui/facebook';
-import GoogleProvider from '../../app/ui/google';
+import FacebookProvider from '../../ui/facebook';
+import GoogleProvider from '../../ui/google';
 
 export default function LoginForm(){
 

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
-import { FilterContext } from "../../app/lib/context";
+import { FilterContext } from "../../lib/context";
 
 type FilterProps = {
   setState: React.Dispatch<React.SetStateAction<string>>;
