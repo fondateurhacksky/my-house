@@ -72,7 +72,7 @@ export const userSchema = object().shape({
 
 
 
-export  const Lists = [{'id':1, 'slug':'/', 'title':'Accueil','display' : ''}, {'id':2, 'slug':'/blog/annonces/personnelles', 'title':'Personnelles','display' : ''},{'id':3, 'slug':'/blog/annonces/mobilier', 'title':'Mobilier','display' : ''},{'id':4,'slug':'/connexion', 'title':'Connexion', 'display' : 'sm:hidden'}, {'id':5,'slug':'/inscription', 'title':"S'inscrire", 'display' : 'sm:hidden'}]
+export  const navLinks = [{'id':1, 'slug':'/', 'title':'Accueil','display' : ''}, {'id':2, 'slug':'/annonces', 'title':'Annonces','display' : ''},{'id':3, 'slug':'/blog/annonces/mobilier', 'title':'Mobilier','display' : ''},{'id':4,'slug':'/connexion', 'title':'Connexion', 'display' : 'sm:hidden'}, {'id':5,'slug':'/inscription', 'title':"S'inscrire", 'display' : 'sm:hidden'}]
 export const footerLinks = [
   { id: 1, title: "À propos de nous", slug: "/a-propos" },
   { id: 2, title: "Pourquoi nous", slug: "/pourquoi-nous" },
@@ -81,6 +81,37 @@ export const footerLinks = [
 ];
 
 export const logs = [{'id':1,'slug':'/connexion', 'title':'Connexion'}, {'id':2,'slug':'/inscription', 'title':"S'inscrire"}]
+export const annLinks = [
+  {
+    title: "Services à Domicile",
+    icon: "👤",
+    link: "/annonces/services",
+    description:
+      "Trouvez des chauffeurs, aides-ménagères, nounous, cuisiniers, jardiniers, gardiens et employés polyvalents pour vos besoins à domicile.",
+  },
+  {
+    title: "Immobilier",
+    icon: "🏠",
+    link: "/annonces/immobilier",
+    description:
+      "Découvrez des maisons, appartements, studios, résidences meublées, terrains, boutiques et espaces à louer ou acheter.",
+  },
+  {
+    title: "Véhicules & Engins",
+    icon: "🛞",
+    link: "/annonces/vehicules",
+    description:
+      "Louez des voitures, motos, camions, tricycles, taxis, ou véhicules professionnels pour vos déplacements ou activités.",
+  },
+  {
+    title: "Matériel & Équipements",
+    icon: "🛠️",
+    link: "/annonces/materiels",
+    description:
+      "Accédez à de la location d’outils, machines, matériels de chantier, équipements professionnels, sonorisation et plus.",
+  },
+];
+
 
 // export const navItems = [
 //   { href: "/", label: "Accueil", icon: CiHome },

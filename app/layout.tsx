@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
+import NavBar from '@/app/ui/NavBar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,7 +27,8 @@ export default async function RootLayout({ children }:{
 
   return (
     <html lang="fr" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans overflow-hidden">
+        <NavBar />
           {children}
       </body>
     </html>

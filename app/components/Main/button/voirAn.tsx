@@ -30,16 +30,16 @@ export default function VoirAn({}) {
                 showDiv && 'rounded-lg'
                 )}
             >
-                Faire une annonce <TfiAnnouncement className="inline-block w-4 h-5 pb-0.5" />
+                Déposer une annonce <TfiAnnouncement className="inline-block w-4 h-5 pb-0.5" />
             </button>
 
 
                 <div className={clsx(
-                    'border-t-none border-x-2 border-b-2 border-orange-500 rounded-b-lg',
+                    'border-t-none border-x-2 border-b-2 border-slate-700 rounded-b-lg',
                     showDiv && 'invisible')}>
                     <button
                     onClick={handlerClickDiv}
-                    className='block w-full hover:bg-slate-100 text-center p-2 border-b-2 border-orange-500'>
+                    className='block w-full hover:bg-slate-100 text-center p-2 border-b-2 border-slate-700'>
                         <FaPeopleRoof className="inline-block w-4 h-5 pb-1"/> Pour le Personnel
                     </button>
                     <button 
