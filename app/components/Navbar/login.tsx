@@ -1,12 +1,10 @@
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
 import { logs } from "../../lib/utility";
 import UserProfil from '../../ui/profil';
 
 
 
 export default function AccountPage() {
-  const { data: session, status } = useSession();
 
 
   
@@ -14,7 +12,7 @@ export default function AccountPage() {
         <div className='relative right-[10px] hidden sm:flex'>
 
       
-      {session?.user ? (<UserProfil />) : (
+      {false ? (<UserProfil />) : (
         
 
        logs.map((log) => (
