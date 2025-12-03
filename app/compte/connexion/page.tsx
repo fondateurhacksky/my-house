@@ -21,7 +21,7 @@ export default function LoginForm(){
 
 
   return (
-    <main className='flex justify-center items-center h-screen w-screen'>
+    <main className='flex justify-center items-center min-h-screen min-w-screen'>
       <div className="flex flex-col justify-center items-center sm:bg-white ">
         <Formik
           initialValues={initialValuesLog}
@@ -53,7 +53,7 @@ export default function LoginForm(){
         </Formik>
         <div className="flex items-center w-80 my-2">
               <div className="flex-1 h-0.5 bg-slate-700"></div>
-              <p className="text-slate-700 px-4">or</p>
+              <p className="text-slate-700 px-4">ou</p>
               <div className="flex-1 h-0.5 bg-slate-700"></div>
         </div>
 

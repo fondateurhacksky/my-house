@@ -1,78 +1,127 @@
-import { object, string, ref, date} from 'yup';
+// ===============================
+// IMPORTS
+// ===============================
+import { z } from "zod";
 
+
+// ===============================
+// INITIAL VALUES (inchangés)
+// ===============================
 
 export const initialValuesLog = {
   identifier: '',
   password: '',
-}
+};
+
 export const initialValues = {
   nom: '',
   prenom: '',
   tel: '',
   dateNaissance: '',
   localité: '',
-  service:'',
+  service: '',
   paiement: '',
   prix: '',
   dormie: '',
-}
-export const blogSchema = object().shape({
-  nom: string().required('Le nom est requis'),
-  prenom: string().required('Le prénom est requis'),
-  tel: string().required('Le numéro de téléphone est requis'),
-  dateNaissance: date().required('La date de naissance est requise'),
-  localité: string().required('Veillez selectionner votre localité'),
-  service: string().required('Prière de choisir le service que vous offrez'),
-  paiement: string()
-    .oneOf(['À la tâche', 'Par jour', 'Par semaine', 'Par mois', 'Autre'])
-    .required('Le mode de paiement est requis'),
-  prix: string()
-    .oneOf([
+};
+
+export const initialValuesSign = {
+  nom: '',
+  prenom: '',
+  tel: '',
+  confirm: '',
+  pwd: '',
+  confirmPwd: '',
+};
+
+
+// ===============================
+// BLOG SCHEMA → ZOD
+// ===============================
+
+export const blogSchema = z.object({
+  nom: z.string().min(1, 'Le nom est requis'),
+  prenom: z.string().min(1, 'Le prénom est requis'),
+  tel: z.string().min(1, 'Le numéro de téléphone est requis'),
+
+  dateNaissance: z.string().min(1, 'La date de naissance est requise'),
+
+  localité: z.string().min(1, 'Veillez selectionner votre localité'),
+
+  service: z.string().min(1, 'Prière de choisir le service que vous offrez'),
+
+  paiement: z.enum(
+    ['À la tâche', 'Par jour', 'Par semaine', 'Par mois', 'Autre'],
+    { required_error: 'Le mode de paiement est requis' }
+  ),
+
+  prix: z.enum(
+    [
       '0-50000',
       '50001-100000',
       '100001-150000',
       '150001-200000',
       '200001-250000',
-    ])
-    .required('La tranche de prix est requise'),  
-  dormie: string().oneOf(['OUI', 'NON']).required('La valeur de dormie est requise'),
+    ],
+    { required_error: 'La tranche de prix est requise' }
+  ),
+
+  dormie: z.enum(['OUI', 'NON'], {
+    required_error: 'La valeur de dormie est requise',
+  }),
 });
 
-export const initialValuesSign ={
-  nom:'',
-  prenom:'',
-  tel:'',
-  confirm:'',
-  pwd:'',
-  confirmPwd:'',
-}
+
+// ===============================
+// USER SCHEMA → ZOD
+// ===============================
+
+export const userSchema = z.object({
+  nom: z.string().min(1, 'Le nom est obligatoire'),
+  prenom: z.string().min(1, 'Le prénom est obligatoire'),
+
+  tel: z
+    .string()
+    .regex(/^(?:\+)?\d{3}(?:\s)?\d{10,11}$/, "Le numéro n'est pas valide")
+    .min(1, 'Le numéro de téléphone est obligatoire'),
+
+  confirm: z
+    .string()
+    .regex(/^\d{6}$/, 'Le code de confirmation n\'est pas valide')
+    .min(1, 'Le numéro de téléphone est obligatoire'),
+
+  pwd: z.string().min(6, 'Le mot de passe est obligatoire'),
+
+  confirmPwd: z.string().min(6, 'Le mot de passe est obligatoire'),
+})
+.refine((data) => data.pwd === data.confirmPwd, {
+  message: "Password not match",
+  path: ["confirmPwd"],
+});
 
 
-export default blogSchema;
+// ===============================
+// USER LOGIN SCHEMA (userSchema2) → ZOD
+// ===============================
+
+export const userSchema2 = z.object({
+  identifier: z.string().min(1, 'Le nom est obligatoire'),
+  password: z.string().min(6, 'Le mot de passe est obligatoire'),
+});
 
 
-export const userSchema = object().shape({
-    nom: string().required('Le nom est obligatoire'),
-    prenom: string().required('Le prénom est obligatoire'),
-    tel: string().matches(/^(?:\+)?\d{3}(?:\s)?\d{10,11}$/,
-    'le numero n\'est pas valide'
-    ).required('Le numéro de téléphone est obligatoire'),
-    confirm: string().matches(/^\d{6}$/
-    ,
-    'Le code de confirmation n\'est pas valide'
-    ).required('Le numéro de téléphone est obligatoire'),
-    pwd: string().min(6).required('Le mot de passe est obligatoire'),
-    confirmPwd: string().oneOf([ref('pwd')],'Password not match').min(6).required('Le mot de passe est obligatoire'),
-  })
-  export const userSchema2 = object().shape({
-    identifier: string().required('Le nom est obligatoire'),
-    password: string().min(6).required('Le mot de passe est obligatoire'),
-  })
+// ===============================
+// NAVIGATION LINKS (inchangés)
+// ===============================
 
+export const navLinks = [
+  { id: 1, slug: '/', title: 'Accueil', display: '' },
+  { id: 2, slug: '/annonces', title: 'Annonces', display: '' },
+  { id: 3, slug: '/blog/annonces/mobilier', title: 'Mobilier', display: '' },
+  { id: 4, slug: '/connexion', title: 'Connexion', display: 'sm:hidden' },
+  { id: 5, slug: '/inscription', title: "S'inscrire", display: 'sm:hidden' },
+];
 
-
-
-export  const navLinks = [{'id':1, 'slug':'/', 'title':'Accueil','display' : ''}, {'id':2, 'slug':'/annonces', 'title':'Annonces','display' : ''},{'id':3, 'slug':'/blog/annonces/mobilier', 'title':'Mobilier','display' : ''},{'id':4,'slug':'/connexion', 'title':'Connexion', 'display' : 'sm:hidden'}, {'id':5,'slug':'/inscription', 'title':"S'inscrire", 'display' : 'sm:hidden'}]
 export const footerLinks = [
   { id: 1, title: "À propos de nous", slug: "/a-propos" },
   { id: 2, title: "Pourquoi nous", slug: "/pourquoi-nous" },
@@ -80,7 +129,7 @@ export const footerLinks = [
   { id: 4, title: "Nos contacts", slug: "/nos-contacts" },
 ];
 
-export const logs = [{'id':1,'slug':'/connexion', 'title':'Connexion'}, {'id':2,'slug':'/inscription', 'title':"S'inscrire"}]
+
 export const annLinks = [
   {
     title: "Services à Domicile",
@@ -113,10 +162,10 @@ export const annLinks = [
 ];
 
 
-// export const navItems = [
-//   { href: "/", label: "Accueil", icon: CiHome },
-//   { href: "/blog/annonces", label: "Annonces" },
-//   { href: "/interests", label: "Mes intérêts" },
-//   { href: "/profile", label: "Mon profil" },
-//   { href: "/reclamation", label: "Reclamations" }
-// ];
+// ===============================
+// TYPES AUTOMATIQUES (super utile !)
+// ===============================
+
+export type BlogSchemaType = z.infer<typeof blogSchema>;
+export type UserSchemaType = z.infer<typeof userSchema>;
+export type UserSchema2Type = z.infer<typeof userSchema2>;

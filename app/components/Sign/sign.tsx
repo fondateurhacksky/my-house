@@ -19,7 +19,6 @@ export default function SignupForm(){
 
   return (
     <main>
-          <NavBar />
           <Formik
           initialValues={initialValuesSign}
           validationSchema={userSchema}

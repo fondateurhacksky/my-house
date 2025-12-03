@@ -16,14 +16,14 @@ const config: Config = {
       fontSize: {
         'n': 'clamp(10px, 4vw, 15px)',
         'm': 'clamp(20px, 8vw, 25px)',
-        'clamp': 'clamp(20px, 8vw, 20px)'
+        'clamp': 'clamp(20px, 5vw, 40px)'
       },
       gridTemplateRows: {
         // Simple 8 row grid
         '8': 'repeat(8, minmax(0, 1fr))',
 
         // Complex site-specific row configuration
-        'layout': 'minmax(80px, 22s0px) minmax(80px, 220px)',
+        'layout': 'minmax(80px, 220px) minmax(80px, 220px)',
             // 'layout0' : '100px 100px 100px'
       },
       colors: {

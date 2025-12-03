@@ -1,27 +1,30 @@
 import Link from 'next/link';
-import { logs } from "../../lib/utility";
+import { FiUser } from 'react-icons/fi';
 import UserProfil from '../../ui/profil';
 
+export default function LogBtn() {
 
+  const isLogged = false; // à remplacer plus tard quand tu feras l'auth
 
-export default function AccountPage() {
+  return (
+    <div className="relative right-[10px] hidden sm:flex">
 
-
-  
-    return (
-        <div className='relative right-[10px] hidden sm:flex'>
-
-      
-      {false ? (<UserProfil />) : (
-        
-
-       logs.map((log) => (
-          <button key={log.id} className={`text-slate-50 bg-slate-700 shadow-md rounded md:text-base font-semibold my-2 last:mx-2 w-24 h-[40px] hover:bg-slate-800`}>
-            <Link href={log.slug}>{log.title}</Link>
-          </button>
-      )) 
+      {isLogged ? (
+        <UserProfil />
+      ) : (
+        <Link
+          href="/compte"
+          className="flex items-center justify-center gap-2 
+                     text-slate-50 bg-slate-600 rounded-md 
+                     md:text-base font-semibold my-2 
+                     w-32 h-[40px] hover:bg-slate-800 
+                     transition-all"
+        >
+          <FiUser className="text-2xl" />
+          <span>Compte</span>
+        </Link>
       )}
+
     </div>
   );
 }
-

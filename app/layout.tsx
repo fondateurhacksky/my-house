@@ -19,17 +19,14 @@ export const metadata: Metadata = {
   description: 'Site de placement de personnelle et de biens',
 }
 
-export default async function RootLayout({ children }:{
+export default function RootLayout({ children }: {
   children: React.ReactNode
 }) {
-
-
-
   return (
     <html lang="fr" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans overflow-hidden">
+      <body className='overflow-hidden'>
         <NavBar />
-          {children}
+        {children}
       </body>
     </html>
   )

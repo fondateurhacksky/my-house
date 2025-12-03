@@ -1,0 +1,110 @@
+export default function Form() {
+  return (
+    <form className="flex flex-col gap-3 w-full md:w-1/2 bg-[#3A3751]
+ rounded-xl p-6 shadow-2xl">
+
+      {/* TITRE */}
+      <h1 className="text-2xl font-bold text-white text-center uppercase tracking-wider">
+        Créer un compte
+      </h1>
+
+      {/* Barre décorative */}
+      <div className="w-16 h-[3px] bg-white mx-auto rounded-full mb-2"></div>
+
+      <p className="text-sm text-white text-center -mt-1 mb-4">
+        Inscrivez-vous pour accéder aux services et commencer vos démarches.
+      </p>
+
+      {/* NOM + PRÉNOM */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <input
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Nom"
+        />
+
+        <input
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Prénom"
+        />
+      </div>
+
+      {/* TELEPHONE */}
+      <input
+        className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                   placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                   focus:border-indigo-400"
+        placeholder="Téléphone"
+      />
+
+      {/* EMAIL */}
+      <input
+        className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                   placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                   focus:border-indigo-400"
+        placeholder="Email (facultatif)"
+      />
+
+      {/* VILLE + COMMUNE */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <input
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Ville"
+        />
+
+        <input
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Commune"
+        />
+      </div>
+
+      {/* LOCALISATION */}
+      <textarea
+        rows={2}
+        maxLength={120}
+        className="w-full bg-transparent border border-slate-400 rounded-md p-3 text-sm 
+                   text-white placeholder-slate-300 focus:outline-none focus:border-indigo-400 
+                   hover:border-indigo-300 resize-none"
+        placeholder="Localisation (ex: Riviera 2, près du carrefour...)"
+      ></textarea>
+
+      {/* MOT DE PASSE */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <input
+          type="password"
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Mot de passe"
+        />
+
+        <input
+          type="password"
+          className="w-full bg-transparent border-b border-slate-300 text-white py-2 text-sm 
+                     placeholder-slate-300 focus:outline-none hover:border-indigo-300 
+                     focus:border-indigo-400"
+          placeholder="Confirmer le mot de passe"
+        />
+      </div> */}
+
+      <p className="text-xs text-center text-white mt-2">
+        Vos informations restent strictement confidentielles.
+      </p>
+
+      {/* BOUTON */}
+      <button className="w-full mt-2 px-20 py-3 bg-gradient-to-r from-indigo-500 to-indigo-600 
+                         hover:from-indigo-600 hover:to-indigo-700 text-white 
+                         rounded-xl text-sm font-medium shadow-md hover:shadow-xl 
+                         transition-all hover:-translate-y-1 mx-auto">
+        Envoyez
+      </button>
+    </form>
+  );
+}

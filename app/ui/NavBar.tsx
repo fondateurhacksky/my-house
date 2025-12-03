@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import List from "@/app/components/Navbar/List";
 import Logo from "@/app/components/Navbar/Logo";
 import HorizontalMenu from "@/app/components/Navbar/toggle";
-// import FilterBar from "@/app/components/blog/filterBar";
-// import { FilterContext } from "@/app/lib/context";
-import AccountPage from "@/app/components/Navbar/login";
+import LogBtn from "@/app/components/Navbar/login";
 
 export default function NavBar() {
   const [horiVisible, setHoriVisible] = useState(false);
@@ -40,8 +38,7 @@ export default function NavBar() {
 
        
       <List horiVisible={horiVisible} />
-      <AccountPage />
-      
+      <LogBtn />      
       <HorizontalMenu horiVisible={horiVisible} setHoriVisible={setHoriVisible} />
       {/* permet de mettre le menu en horizontale pour ecran de petite taille  */}
     </nav>

@@ -13,7 +13,7 @@ export default function InputG2({errors, touched}:
               type="text"
               id="password"
               name="password"
-              className="peer opacity-75 bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-300 focus:border-blue-300 h-6"
+              className="peer opacity-75 bg-inherit border-b-2 border-slate-500 focus:outline-none  focus:border-blue-300 h-6"
               required
             />
 
