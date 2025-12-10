@@ -5,11 +5,25 @@ export interface CategoryCardProps {
   title: string;
   description?: string;
   link: string;
+  className?: string;  // 👈 ajouté
+  style?: React.CSSProperties; // 👈 ajouté
 }
-export default function CategoryCard({ icon, title, description, link } : CategoryCardProps) {
+
+export default function CategoryCard({ 
+  icon, 
+  title, 
+  description, 
+  link,
+  className = "",
+  style = {},
+} : CategoryCardProps) {
   return (
-    <div className="cursor-pointer
- basis-[300px] bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center border border-transparent hover:border-slate-300">
+    <div 
+      className={`cursor-pointer basis-[300px] bg-gray-50 rounded-xl shadow-md p-6 
+                  flex flex-col items-center text-center border border-transparent 
+                  hover:border-slate-300 transition-all ${className}`}
+      style={style}  // 👈 applique le style
+    >
       <div className="text-6xl mb-4">{icon}</div>
 
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
@@ -20,7 +34,8 @@ export default function CategoryCard({ icon, title, description, link } : Catego
 
       <Link
         href={link}
-        className="hover:-translate-y-1 transition-all mt-auto px-20 py-3 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm font-medium shadow-md hover:shadow-xl"
+        className="hover:-translate-y-1 transition-all mt-auto px-20 py-3 bg-green-500 
+                   hover:bg-green-600 text-white rounded-md text-sm font-medium shadow-md hover:shadow-xl"
       >
         ACCEDER
       </Link>

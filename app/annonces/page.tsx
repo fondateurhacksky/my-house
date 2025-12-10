@@ -17,16 +17,19 @@ export default function AnnoncesPage() {
       </p>
 
       <div className="flex flex-row justify-around h-80">
-        {annLinks.map((cat) => (
+        {annLinks.map((cat, index) => (
           <CategoryCard
             key={cat.title}
             icon={cat.icon}
             title={cat.title}
             description={cat.description}
             link={cat.link}
+            className="card-slide"
+            style={{ animationDelay: `${index * 0.2}s` }}
           />
         ))}
       </div>
+
     </main>
   );
 }

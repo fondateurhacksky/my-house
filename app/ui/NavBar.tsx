@@ -25,7 +25,7 @@ export default function NavBar() {
   };
   return (
     <nav
-      className={`flex justify-between bg-white shadow-lg border-b border-slate-500 z-50 w-full h-[60px]`}
+      className={`relative shadow-lg border-b border-slate-500 z-50 w-full h-[60px]`}
     //  le navbar contient trois element : le logo, le menu, les bouton login/sign
     >
         {/* <div className="relative"> */}

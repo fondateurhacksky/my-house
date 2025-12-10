@@ -118,8 +118,6 @@ export const navLinks = [
   { id: 1, slug: '/', title: 'Accueil', display: '' },
   { id: 2, slug: '/annonces', title: 'Annonces', display: '' },
   { id: 3, slug: '/blog/annonces/mobilier', title: 'Mobilier', display: '' },
-  { id: 4, slug: '/connexion', title: 'Connexion', display: 'sm:hidden' },
-  { id: 5, slug: '/inscription', title: "S'inscrire", display: 'sm:hidden' },
 ];
 
 export const footerLinks = [

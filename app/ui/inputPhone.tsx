@@ -1,26 +1,32 @@
-import { useField } from "formik";
-import Input from 'react-phone-number-input/input';
-import { PhoneInputFieldProps } from "../lib/definition";
+'use client'
 
-const PhoneInputField: React.FC<PhoneInputFieldProps> = ({ value, name, type, handleFocus }) => {
-  const [field, meta, helpers] = useField(name);
+import PhoneInput from 'react-phone-number-input/input'
+import 'react-phone-number-input/style.css'
 
-  const handlePhoneChange = (newPhoneValue: string | undefined) => {
-    helpers.setValue(newPhoneValue || "");
-  };
+interface PhoneInputFieldProps {
+  value: string | undefined
+  onChange: (value: string | undefined) => void
+  placeholder?: string
+  style?:string
+}
 
+export default function PhoneInputField({
+  value,
+  onChange,
+  placeholder = '+225 07 49 85 23 10',
+  style
+}: PhoneInputFieldProps) {
   return (
-    <Input
-      {...field}
-      type={type}
-      placeholder="Enter phone number"
-      country="CI"
-      className="bg-inherit border-b-2 border-slate-500 focus:outline-none focus:border-blue-500 h-10"
-      value={value}
-      onChange={handlePhoneChange}
-      onFocus={() => handleFocus(name)}
-    />
-  );
-};
-
-export default PhoneInputField;
+    <div className="flex flex-col gap-2">
+      <PhoneInput
+        country="CI"
+        international
+        withCountryCallingCode
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className={style}
+      />
+    </div>
+  )
+}
