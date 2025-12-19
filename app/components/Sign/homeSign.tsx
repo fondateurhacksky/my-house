@@ -2,10 +2,9 @@ import Form from "@/app/ui/form";
 
 export default function FormulaireInscription() {
   return (
-      <div className="max-w-5xl w-full bg-white p-4 md:px-16 rounded-lg shadow-lg mb-16 
-                      flex flex-col md:flex-row items-center gap-10 border border-slate-100 animate-fadeIn">
-                        {/* Fade-in animation container */}
-
+      <div className="max-w-5xl w-full bg-slate-100 p-4 md:px-16 rounded-lg shadow-lg mb-16 
+                      flex flex-col md:flex-row items-center gap-10  animate-fadeIn">
+        
         {/* FORMULAIRE — À GAUCHE */}
         <Form/>
 

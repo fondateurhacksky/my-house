@@ -18,17 +18,17 @@ export default function Form() {
     <form
       onSubmit={handleSubmit}
       className="flex flex-col gap-3 w-full md:w-1/2 bg-[#3A3751]
- rounded-xl p-6 shadow-2xl"
+ rounded-xl p-5 shadow-xl"
     >
       {/* TITRE */}
       <h1 className="text-2xl font-bold text-white text-center uppercase tracking-wider">
-        Créer un compte
+        Rejoignez MyHouse
       </h1>
 
       {/* Barre décorative */}
-      <div className="w-16 h-[3px] bg-white mx-auto rounded-full mb-2"></div>
+      <div className="w-24 h-1 bg-white mx-auto rounded-full "></div>
 
-      <p className="text-sm text-white text-center -mt-1 mb-4">
+      <p className="text-sm text-white text-center mb-2">
         Inscrivez-vous pour accéder aux services et commencer vos démarches.
       </p>
 
@@ -58,7 +58,7 @@ export default function Form() {
                  value={phone}
                  onChange={setPhone}
                  style="
-                bg-transparent  text-white
+                bg-transparent  text-slate-300
                  border border-gray-300 rounded-md px-3 py-2
                  focus:outline-none
                "
@@ -110,7 +110,7 @@ export default function Form() {
         className="w-full mt-2 px-20 py-3 bg-gradient-to-r from-indigo-500 to-indigo-600 
                          hover:from-indigo-600 hover:to-indigo-700 text-white 
                          rounded-xl text-sm font-medium shadow-md hover:shadow-xl 
-                         transition-all hover:-translate-y-1 mx-auto"
+                         transition-all hover:-translate-y-1 mx-auto tracking-wider"
       >
         Envoyez
       </button>

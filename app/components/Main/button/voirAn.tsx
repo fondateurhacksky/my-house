@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TfiAnnouncement } from "react-icons/tfi";
 
-export default function VoirAn() {
+export default function PublierAn() {
     return (
         <div>
             <Link

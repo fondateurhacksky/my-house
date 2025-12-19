@@ -117,7 +117,7 @@ export const userSchema2 = z.object({
 export const navLinks = [
   { id: 1, slug: '/', title: 'Accueil', display: '' },
   { id: 2, slug: '/annonces', title: 'Annonces', display: '' },
-  { id: 3, slug: '/blog/annonces/mobilier', title: 'Mobilier', display: '' },
+  { id: 3, slug: '/blog/annonces/jober', title: 'Jobeur', display: '' },
 ];
 
 export const footerLinks = [
@@ -159,7 +159,14 @@ export const annLinks = [
   },
 ];
 
-
+export interface CategoryCardProps {
+  icon: string;
+  title: string;
+  description?: string;
+  link: string;
+  className?: string;  // 👈 ajouté
+  style?: React.CSSProperties; // 👈 ajouté
+}
 // ===============================
 // TYPES AUTOMATIQUES (super utile !)
 // ===============================

@@ -1,5 +1,4 @@
-'use client'
-import VoireAn from './button/voirAn';
+import PublierAn from './button/voirAn';
 import Text from "./text";
 
 export default function MainSection() {
@@ -10,7 +9,7 @@ export default function MainSection() {
 
         <div className="flex flex-col justify-center items-center ">
           <Text />
-          <VoireAn />
+          <PublierAn />
         </div>
 
         <iframe

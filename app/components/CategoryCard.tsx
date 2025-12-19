@@ -1,13 +1,5 @@
 import Link from "next/link";
-
-export interface CategoryCardProps {
-  icon: string;
-  title: string;
-  description?: string;
-  link: string;
-  className?: string;  // 👈 ajouté
-  style?: React.CSSProperties; // 👈 ajouté
-}
+import { CategoryCardProps } from "../lib/utility";
 
 export default function CategoryCard({ 
   icon, 
@@ -22,7 +14,7 @@ export default function CategoryCard({
       className={`cursor-pointer basis-[300px] bg-gray-50 rounded-xl shadow-md p-6 
                   flex flex-col items-center text-center border border-transparent 
                   hover:border-slate-300 transition-all ${className}`}
-      style={style}  // 👈 applique le style
+      style={style} 
     >
       <div className="text-6xl mb-4">{icon}</div>
 

@@ -24,9 +24,7 @@ export default function Footer() {
 
       {/* Deuxième barre */}
       <div className="w-4/5 border-t border-slate-500 mt-4 pt-3 text-center text-xs text-slate-500">
-        {/* © {new Date().getFullYear()} MyHouse. Tous droits réservés. */}
-        {/* j'ai mis ca en commentaire pour supprimer une erreure apres la suppressions de nextjsauth sur new date() */}
-        © {2025} MyHouse. Tous droits réservés.
+        © {2026} MyHouse. Tous droits réservés.
         
       </div>
     </footer>

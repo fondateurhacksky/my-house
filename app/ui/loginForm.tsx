@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import PhoneInputField from './inputPhone'
 import OtpModal from './OtpModal'

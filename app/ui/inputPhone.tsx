@@ -6,14 +6,12 @@ import 'react-phone-number-input/style.css'
 interface PhoneInputFieldProps {
   value: string | undefined
   onChange: (value: string | undefined) => void
-  placeholder?: string
   style?:string
 }
 
 export default function PhoneInputField({
   value,
   onChange,
-  placeholder = '+225 07 49 85 23 10',
   style
 }: PhoneInputFieldProps) {
   return (
@@ -22,7 +20,6 @@ export default function PhoneInputField({
         country="CI"
         international
         withCountryCallingCode
-        placeholder={placeholder}
         value={value}
         onChange={onChange}
         className={style}

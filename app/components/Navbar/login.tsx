@@ -21,8 +21,8 @@ export default function LogBtn() {
         <Link
           href="/compte"
           className={clsx(
-            "bg-slate-100 flex items-center justify-center gap-2 text-slate-600 border border-slate-300 rounded-md md:text-base font-medium my-2 w-40 h-11 hover:bg-slate-300 transition-all",
-            isLoginPage && "hidden"   // 👈 EXACTEMENT CE QUE TU VOULAIS
+            "bg-white flex items-center justify-center gap-2 text-slate-700 border border-slate-300 rounded-md md:text-base font-medium my-2 w-40 h-11 hover:bg-slate-100 transition-all ",
+            isLoginPage && "hidden" 
           )}
         >
           <FiUser className="text-xl" />

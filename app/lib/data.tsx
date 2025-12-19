@@ -1,89 +1,116 @@
-import prisma from '../../db'
+// app/lib/data.ts
+export const servicesByCategory: Record<string, any[]> = {
+  services: [
+    {
+      id: 1,
+      firstName: "Awa",
+      lastName: "Koné",
+      age: 32,
+      city: "Abidjan",
+      district: "Cocody",
+      serviceType: "Aide ménagère",
+      experience: 6,
+      availability: "Temps plein",
+      price: "40 000",
+      rateType: "mois",
+    },
+    {
+      id: 2,
+      firstName: "Issouf",
+      lastName: "Traoré",
+      age: 38,
+      city: "Abidjan",
+      district: "Yopougon",
+      serviceType: "Chauffeur privé",
+      experience: 10,
+      availability: "Jour / Nuit",
+      price: "60 000",
+      rateType: "mois",
+    },
+    {
+      id: 3,
+      firstName: "Mariam",
+      lastName: "Coulibaly",
+      age: 28,
+      city: "Abidjan",
+      district: "Riviera",
+      serviceType: "Nounou",
+      experience: 4,
+      availability: "Journée",
+      price: "50 000",
+      rateType: "mois",
+    },
+    {
+      id: 4,
+      firstName: "Adama",
+      lastName: "Bamba",
+      age: 45,
+      city: "Abidjan",
+      district: "Anyama",
+      serviceType: "Gardien de nuit",
+      experience: 12,
+      availability: "Nuit",
+      price: "55 000",
+      rateType: "mois",
+    },
+    {
+      id: 5,
+      firstName: "Fatou",
+      lastName: "Diallo",
+      age: 35,
+      city: "Abidjan",
+      district: "Marcory",
+      serviceType: "Cuisinière",
+      experience: 8,
+      availability: "Temps plein",
+      price: "65 000",
+      rateType: "mois",
+    },
+    {
+      id: 6,
+      firstName: "Souleymane",
+      lastName: "Ouattara",
+      age: 41,
+      city: "Abidjan",
+      district: "Abobo",
+      serviceType: "Jardinier",
+      experience: 9,
+      availability: "Matin",
+      price: "45 000",
+      rateType: "mois",
+    },
+  ],
+};
 
+/* =======================
+   Données (mock)
+======================= */
+export const CITIES = [
+  { value: "Cocody", label: "Cocody" },
+  { value: "Yopougon", label: "Yopougon" },
+  { value: "Riviera", label: "Riviera" },
+  { value: "Marcory", label: "Marcory" },
+  { value: "Treichville", label: "Treichville" },
+];
 
+export const SERVICES = [
+  { value: "Aide ménagère", label: "Aide ménagère" },
+  { value: "Chauffeur privé", label: "Chauffeur privé" },
+  { value: "Nounou", label: "Nounou" },
+  { value: "Gardien", label: "Gardien" },
+];
 
-export async function getUser(email?: string | undefined, number? : string | undefined) {
-    try {
-      const user = await prisma.user.findFirst({
-        where: {
-          OR: [
-            {
-              email: email, // Remplacez userEmail par l'email de l'utilisateur que vous recherchez
-            },
-            {
-              number: number, // Remplacez userPhoneNumber par le numéro de téléphone de l'utilisateur que vous recherchez
-            },
-          ],
-        },
-      });
-      return user;
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
-      throw new Error('Failed to fetch user.');
-    }
-  }
-  
+export const AGE_RANGES = [
+  { value: "18-25", label: "18 – 25 ans" },
+  { value: "26-35", label: "26 – 35 ans" },
+  { value: "36-45", label: "36 – 45 ans" },
+  { value: "46-60", label: "46 – 60 ans" },
+];
 
-  export const communeOptions = [
-    { label: 'Abobo', value: 'Abobo' },
-    { label: 'Adjamé', value: 'Adjamé' },
-    { label: 'Cocody', value: 'Cocody' },
-    { label: 'Yopougon', value: 'Yopougon' },
-    { label: 'Marcory', value: 'Marcory' },
-    { label: 'Treichville', value: 'Treichville' },
-    { label: 'Plateau', value: 'Plateau' },
-    { label: 'Koumassi', value: 'Koumassi' },
-    { label: 'Atécoubé', value: 'Atécoubé' },  
-  ];
-  export const servicesOptions = [
-    { label: 'Service de ménage', value: 'menage' },
-    { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
-    { label: 'Aide à domicile', value: 'aide domicile' },
-    { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
-    { label: 'Jardinier/Jardinière', value: 'jardinier' },
-    { label: 'Chauffeur', value: 'chauffeur' },
-    { label: 'Personnel de sécurité', value: 'securite' },
-    { label: 'Service d\'autel', value: 'autel' },
-  ]
-
-  export const paymentOptions = [
-    { label: 'A la tâche', value: 'A la tache' },
-    { label: 'Par jour', value: 'Par jour' },
-    { label: 'Par semaine', value: 'Par semaine' },
-    { label: 'Par mois', value: 'Par mois' },
-    { label: 'Autre', value: 'Autre' }
-  ];
-  export const salaryOptions = [
-    { label: '0 - 50 000 Francs', value: '0-50000' },
-    { label: '50 001 - 100 000 Francs', value: '50001-100000' },
-    { label: '100 001 - 150 000 Francs', value: '100001-150000' },
-    { label: '150 001 - 200 000 Francs', value: '150001-200000' },
-    { label: '200 001 - 250 000 Francs', value: '200001-250000' }
-  ];
-    
-  // export const servicesOptions = [
-  //   {
-  //     label: 'Services liés à la maison',
-  //     options: [
-  //       { label: 'Service de ménage', value: 'menage' },
-  //       { label: 'Garde d\'enfants (Nounou)', value: 'nounou' },
-  //       { label: 'Aide à domicile', value: 'aide_domicile' },
-  //       { label: 'Cuisinier/Cuisinière', value: 'cuisinier' },
-  //       { label: 'Jardinier/Jardinière', value: 'jardinier' },
-  //     ],
-  //   },
-  //   {
-  //     label: 'Services résidentiels',
-  //     options: [
-  //       { label: 'Chauffeur', value: 'chauffeur' },
-  //       { label: 'Personnel de sécurité', value: 'securite' },
-  //     ],
-  //   },
-  //   {
-  //     label: 'Autres services',
-  //     options: [
-  //       { label: 'Service d\'autel', value: 'autel' },
-  //       // Ajoutez d'autres services ici...
-  //     ],
-  //   },
-  // ];
+export const WORK_TIMES = [
+  { value: "jour", label: "Journée" },
+  { value: "nuit", label: "Nuit" },
+  { value: "jour_nuit", label: "Jour & nuit" },
+  { value: "jour_dort", label: "Journée + dort sur place" },
+  { value: "nuit_dort", label: "Nuit + dort sur place" },
+];
