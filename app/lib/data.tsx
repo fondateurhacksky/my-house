@@ -1,4 +1,5 @@
 // app/lib/data.ts
+
 export const servicesByCategory: Record<string, any[]> = {
   services: [
     {

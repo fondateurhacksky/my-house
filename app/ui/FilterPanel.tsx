@@ -14,6 +14,7 @@ const selectStyles = {
     boxShadow: "none",
     minHeight: "38px",
     fontSize: "13px",
+    cursor: "pointer",
   }),
   valueContainer: (base: any) => ({
     ...base,
@@ -47,7 +48,7 @@ export default function FilterPanel({
   };
 
   const input =
-    "border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-green-400 bg-white";
+    "border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none  focus:border-blue-300 bg-white hover:border-gray-400 cursor-pointer";
 
   return (
     <aside
@@ -69,7 +70,7 @@ export default function FilterPanel({
 
       <div className="space-y-2 text-sm">
         {/* Localisation & budget */}
-        <div className="bg-slate-50 rounded-xl px-3 py-3 space-y-2">
+        <div className="bg-slate-50 rounded-xl p-3 space-y-2">
           <p className="font-semibold text-slate-700 text-xs">
             📍 Votre lieu de résidence & budget
           </p>
@@ -104,17 +105,32 @@ export default function FilterPanel({
               Profil recherché • Genre • Tranche d’âge
           </p>
 
+            <div className="flex gap-2">
+             <div className="w-1/2">
+              <Select
+                options={SERVICES}
+                placeholder="Profil recherché"
+                styles={selectStyles}
+                value={filters.service}
+                onChange={(e) => handleChange("service", e)}
+              />
+            </div>
+            <div className="w-1/2">
+              <Select
+                options={AGE_RANGES}
+                placeholder="Tranche d’âge"
+                styles={selectStyles}
+                value={filters.ageRange}
+                onChange={(e) => handleChange("ageRange", e)}
+                menuPlacement="top"
+                menuPosition="fixed"
 
-          <Select
-            options={SERVICES}
-            placeholder="Profil recherché"
-            styles={selectStyles}
-            value={filters.service}
-            onChange={(e) => handleChange("service", e)}
-          />
+              />
+            </div>
+        </div>
 
           {/* Préférence de genre */}
-          <div className="border border-slate-300 rounded-lg px-3 py-2 bg-white">
+          <div className="border border-slate-300 rounded-lg p-3 bg-white hover:border-gray-400 cursor-pointer">
             <div className="flex justify-between text-xs">
               {[
                 { label: "Femme", value: "femme" },
@@ -136,16 +152,6 @@ export default function FilterPanel({
             </div>
           </div>
 
-          <Select
-            options={AGE_RANGES}
-            placeholder="Tranche d’âge"
-            styles={selectStyles}
-            value={filters.ageRange}
-            onChange={(e) => handleChange("ageRange", e)}
-            menuPlacement="top"
-            menuPosition="fixed"
-
-          />
         </div>
 
         {/* Temps de travail */}
