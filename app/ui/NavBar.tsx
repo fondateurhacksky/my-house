@@ -4,6 +4,9 @@ import List from "@/app/components/Navbar/List";
 import Logo from "@/app/components/Navbar/Logo";
 import HorizontalMenu from "@/app/components/Navbar/toggle";
 import LogBtn from "@/app/components/Navbar/login";
+import { Suspense } from "react";
+import ListSkeleton from "../components/skeleton/ListSkeleton";
+
 
 export default function NavBar() {
   const [horiVisible, setHoriVisible] = useState(false);
@@ -37,8 +40,10 @@ export default function NavBar() {
        {/* </div> */}
 
        
-      <List horiVisible={horiVisible} />
-      <LogBtn />      
+       <Suspense fallback={<ListSkeleton/>}>
+        <List horiVisible={horiVisible} />
+      </Suspense>
+      {/* <LogBtn />       */}
       <HorizontalMenu horiVisible={horiVisible} setHoriVisible={setHoriVisible} />
       {/* permet de mettre le menu en horizontale pour ecran de petite taille  */}
     </nav>

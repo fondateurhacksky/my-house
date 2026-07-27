@@ -15,7 +15,7 @@ export default function Page() {
             Connexion
           </h1>
           <p className="text-sm text-slate-500 mt-1 text-center">
-            Entrez avec votre numéro de téléphone pour continuer.
+            Entrez votre numéro de téléphone pour continuer.
           </p>
         </div>
 
@@ -24,16 +24,16 @@ export default function Page() {
 
         {/* Divider */}
         <div className="my-5 flex items-center gap-3">
-          <span className="h-px bg-gray-300 w-full"></span>
-          <span className="text-sm text-gray-400">ou</span>
-          <span className="h-px bg-gray-300 w-full"></span>
+          <span className="h-px bg-gray-500 w-full"></span>
+          <span className="text-md text-gray-700 mb-1">ou</span>
+          <span className="h-px bg-gray-500 w-full"></span>
         </div>
 
         {/* LINK INSCRIPTION */}
         <Link
           href="/compte/inscription"
-          className="block w-full bg-gray-600 text-white py-2 text-center rounded-md 
-                     font-medium hover:bg-gray-800 transition-all"
+          className="block w-full bg-indigo-800 text-white py-2 text-center rounded-md 
+                     font-medium hover:bg-indigo-600 transition-all"
         >
           Créer un nouveau compte
         </Link>

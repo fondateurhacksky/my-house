@@ -1,7 +1,7 @@
 // app/lib/data.ts
 
 export const servicesByCategory: Record<string, any[]> = {
-  services: [
+  personnelles: [
     {
       id: 1,
       firstName: "Awa",

@@ -1,3 +1,4 @@
+'use client'
 import { useRouter } from "next/navigation";
 import ProfilText from "./profilText";
 import Image from "next/image";

@@ -1,15 +1,15 @@
 "use client";
-
 import { useState } from "react";
 import ServiceCard from "./ServiceCard";
+import { servicesByCategory } from "@/app/lib/data";
+
 
 export default function ServiceCarousel({
-  services,
-  title,
+  service,
 }: {
-  services: any[];
-  title: string;
+  service: string;
 }) {
+    const services = servicesByCategory[service] || [];
   const [index, setIndex] = useState(0);
 
   const ITEMS_PER_PAGE = 3;
@@ -24,7 +24,7 @@ export default function ServiceCarousel({
       <section className=" relative w-full bg-white border-2 border-slate-300 rounded-md shadow-xl px-14 py-8">
         
           <h1 className="text-2xl font-bold mb-6 capitalize">
-              Annonces – {title}
+              Annonces – {service}
           </h1>
 
         {/* BOUTON PREVIOUS */}

@@ -132,7 +132,7 @@ export const annLinks = [
   {
     title: "Services à Domicile",
     icon: "👤",
-    link: "/annonces/services",
+    link: "/annonces/personnelles",
     description:
       "Trouvez des chauffeurs, aides-ménagères, nounous, cuisiniers, jardiniers, gardiens et employés polyvalents pour vos besoins à domicile.",
   },

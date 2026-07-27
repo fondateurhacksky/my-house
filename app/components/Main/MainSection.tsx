@@ -12,13 +12,15 @@ export default function MainSection() {
           <PublierAn />
         </div>
 
-        <iframe
-            className="hidden md:block lg:w-[400px] lg:h-[330px] w-[300px] h-[250px]"
-            src="https://www.youtube.com/embed/mo5PExrurGY?si=GER8ZI5lplDHf9-u"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-        ></iframe>
+         <iframe
+        className="hidden md:block lg:w-[400px] lg:h-[330px] w-[300px] h-[250px]"
+        src="https://www.youtube.com/embed/mo5PExrurGY"
+        title="Présentation vidéo"
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        />
 
     </section>
   );

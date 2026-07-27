@@ -1,18 +1,19 @@
-import { servicesByCategory } from "@/app/lib/data";
+import { Suspense } from 'react'
+import FilterPanelSkeleton from "@/app/components/skeleton/FilterPanelSkeleton";
 import AnnonceClient from "@/app/ui/AnnonceClient";
+
+
+
 
 export default async function Page({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const services = servicesByCategory[slug] || [];
-
+}: PageProps<'/annonces/[slug]'>) {
+    
   return (
-    <AnnonceClient
-      category={slug}
-      services={services}
-    />
+        <Suspense fallback={<FilterPanelSkeleton />}>
+        {params.then(({ slug }) => (
+          <AnnonceClient category={slug} />
+        ))}
+      </Suspense>
   );
 }

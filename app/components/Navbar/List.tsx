@@ -1,7 +1,9 @@
+'use client'
 import Link from 'next/link'
 import { navLinks } from "../../lib/utility";
 import { clsx } from 'clsx'
 import { usePathname } from 'next/navigation';
+
 
 export default function List({ horiVisible }: { horiVisible: boolean }) {
   const pathname = usePathname();

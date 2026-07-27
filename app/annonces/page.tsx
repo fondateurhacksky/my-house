@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Annonces',
 }
+
 export default function AnnoncesPage() {
 
   return (
@@ -29,7 +30,6 @@ export default function AnnoncesPage() {
           />
         ))}
       </div>
-
     </main>
   );
 }
